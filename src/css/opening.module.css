@@ -93,37 +93,45 @@ button:hover
 }
 @media (max-width: 600px) {
     .container {
-      width: 100%;
-      height: 100%;
-      margin: auto;
-      top: 10px;
-      padding: 10px;
+     background-color: transparent;
+     width: 370px;
+     height: 0px;
+     position: relative;
+     top: 1000px;
+     
     }
   
     .video {
-      min-width: 100%;
-      min-height: 200%;
+      min-width: 800px;
+      min-height: 375px;
+      object-fit: fill;
+
+      
       opacity: 0.25;
       position: relative;
+      top: 40px;
+      right: 250px;
+      transform: rotate(90deg);
 
     }
   
     .image {
-      width: 100%;
+      width: 0%;
       opacity: 0.3;
+      visibility: hidden;
     }
   
     p {
       font-size: 24px;
       letter-spacing: 1.5px;
-      bottom: 400px;
+      bottom: 1300px;
     }
   
     .logo {
-      width: 80px;
-      height: 80px;
-      bottom: 450px;
-      left: 40%;
+      width: 100px;
+      height: 100px;
+      bottom: 1400px;
+      left: 36%;
     }
   
     .no,
@@ -133,19 +141,19 @@ button:hover
     }
   
     .no {
-      bottom: 300px;
-      left: 60%;
+      bottom: 1255px;
+      left: 53%;
     }
   
     .yes {
-      bottom: 350px;
-      left: 10%;
+      bottom: 1405px;
+      left: 1%;
     }
   
     .ye,
     .noo {
       font-size: 24px;
-      bottom: 500px;
+      bottom: 1500px;
     }
   
     .ye {
@@ -153,7 +161,7 @@ button:hover
     }
   
     .noo {
-      left: 50%;
+      left: 65%;
     }
   
     .modal {

@@ -23,7 +23,7 @@ export default function Opening() {
       <div className={classes.container}>
         <img src={matehaUnderwear} alt="Mateha Underwear" className={classes.image} />
         <img src={logoWhite} alt="White Logo" className={classes.logo} />
-        <p>Are you lost in the world you live in??</p>
+        <p>Are you lost in the world you live in</p>
         <img src={no} alt="No" className={classes.no} />
         <img src={yes} alt="Yes" className={classes.yes} />
         <button className={classes.ye} onClick={() => setIsShown(true)}>Yes</button>

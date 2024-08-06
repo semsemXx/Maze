@@ -1,0 +1,11 @@
+.navBar 
+{
+    background-color: #bbb5b5;
+    display: flex;
+    
+}
+.navBar ul 
+{
+    margin-right: 200px;
+    margin-left: 200px;
+}

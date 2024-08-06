@@ -1,0 +1,209 @@
+body 
+{
+    overflow: hidden;
+}
+  
+.container 
+{
+    width: 1100px;
+    height: 620px;
+    margin: auto ;
+    position: relative;
+    top: 50px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 6px;
+    outline: 0.1px solid rgb(75, 75, 75);
+    box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.171);
+    position: relative;
+    z-index: 1;
+}
+.video
+{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.25;
+}
+.image 
+{
+    width: 100%;
+    opacity: 0.3;
+}
+.Div 
+{
+     background-color: rgb(0, 0, 0);
+     font-family: 'maze'; 
+     height: 732px;
+}
+p {
+    color: white;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 2.5px;
+    position: relative;
+    bottom: 550px;
+}
+.logo 
+{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    bottom: 620px;
+    left : 480px;
+}
+.no 
+{
+    position: relative;
+    bottom: 560px;
+    left: 520px;
+    width: 390px;
+    height: 330px;
+}
+.yes
+{
+    position: relative;
+    bottom: 895px;
+    left: 200px;
+    width: 390px;
+    height: 330px;
+}
+.ye , .noo
+{
+   position: relative;
+   bottom: 1099px;
+   font-size: 52px;
+   transition: all 0.3s;
+   letter-spacing: 2px;
+}
+.ye 
+{
+    position: relative;
+    left: 350px;
+}
+.noo{
+    position: relative;
+    left: 630px;
+}
+button:hover
+{
+    transform: scale(1.2);
+}
+@media (max-width: 600px) {
+    .container {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      top: 10px;
+      padding: 10px;
+    }
+  
+    .video {
+      min-width: 100%;
+      min-height: 200%;
+      opacity: 0.25;
+      position: relative;
+
+    }
+  
+    .image {
+      width: 100%;
+      opacity: 0.3;
+    }
+  
+    p {
+      font-size: 24px;
+      letter-spacing: 1.5px;
+      bottom: 400px;
+    }
+  
+    .logo {
+      width: 80px;
+      height: 80px;
+      bottom: 450px;
+      left: 40%;
+    }
+  
+    .no,
+    .yes {
+      width: 180px;
+      height: 150px;
+    }
+  
+    .no {
+      bottom: 300px;
+      left: 60%;
+    }
+  
+    .yes {
+      bottom: 350px;
+      left: 10%;
+    }
+  
+    .ye,
+    .noo {
+      font-size: 24px;
+      bottom: 500px;
+    }
+  
+    .ye {
+      left: 20%;
+    }
+  
+    .noo {
+      left: 50%;
+    }
+  
+    .modal {
+      width: 90%;
+      height: auto;
+      bottom: 500px;
+      left: 5%;
+      font-size: 20px;
+      padding: 20px;
+    }
+  
+    .modal p {
+      width: 90%;
+      top: 20px;
+      left: 5%;
+      font-size: 18px;
+    }
+  
+    .star {
+      width: 40px;
+      height: 35px;
+    }
+  
+    .star1 {
+      left: 70%;
+      bottom: 10px;
+    }
+  
+    .star2 {
+      left: 30%;
+      top: 10px;
+    }
+  
+    .star3 {
+      left: 15%;
+      bottom: 50px;
+    }
+  
+    .star4 {
+      left: 60%;
+      bottom: 10px;
+    }
+  
+    .star5 {
+      left: 5%;
+      bottom: 20px;
+    }
+  
+    .btn {
+      font-size: 18px;
+      width: 80px;
+    }
+  }

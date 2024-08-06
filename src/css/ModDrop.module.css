@@ -1,0 +1,129 @@
+@keyframes dropdown {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0.3;
+    }
+  
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(11, 11, 11);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.modal {
+    background-color: rgb(255, 255, 255);
+    width: 580px;
+    height: 320px;
+    font-size: 40px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    bottom: 1375px;
+    left: 240px;
+    outline: 3px solid rgb(178, 175, 175);
+    box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.171);
+    background-image: url("../image/messageYes.jpg");
+    background-attachment: relative;
+    background-position: center;
+    background-position-y: 330px;
+    background-position-x: -15px;
+    border-radius: 8px;
+    animation: dropdown 0.3s ease-out; 
+}
+
+.modal p {
+    width: 500px;
+    position: relative;
+    top: 100px;
+    left: 40px;
+    font-size: 36px;
+    z-index: 10;
+    letter-spacing: 2px;
+}
+
+.star {
+    opacity: 0;
+}
+
+.animate {
+    animation: fading 2s infinite;
+}
+
+.star1 {
+    animation-delay: 0s;
+    width: 80px;
+    height: 70px;
+    position: relative;
+    left: 490px;
+    bottom: 90px;
+}
+
+.star2 {
+    animation-delay: 0.5s;
+    width: 90px;
+    height: 80px;
+    position: relative;
+    left: 190px;
+    top: 50px;
+}
+
+.star3 {
+    animation-delay: 1s;
+    width: 60px;
+    height: 50px;
+    position: relative;
+    left: 100px;
+    bottom: 230px;
+}
+
+.star4 {
+    animation-delay: 1.5s;
+    width: 50px;
+    height: 40px;
+    position: relative;
+    left: 415px;
+    bottom: 60px;
+}
+
+.star5 {
+    animation-delay: 2s;
+    width: 50px;
+    height: 40px;
+    position: relative;
+    left: 20px;
+    bottom: 130px;
+}
+
+.btn {
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    font-size: smaller;
+    position: relative;
+    bottom: 30px;
+    background-color: aliceblue;
+    color: black;
+    width: 120px;
+    border-radius: 8px;
+}
+
+@keyframes fading {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

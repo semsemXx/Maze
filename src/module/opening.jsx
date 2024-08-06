@@ -26,7 +26,7 @@ export default function Opening() {
         <p>Are you lost in the world you live in?</p>
         <img src={no} alt="No" className={classes.no} />
         <img src={yes} alt="Yes" className={classes.yes} />
-        <button className={classes.ye} onClick={() => setIsShown(true)}>Yes</button>
+        <button className={classes.ye} onClick={() => setIsShown(true)}>no</button>
         <button className={classes.noo}>No</button>
         {isShown && <Backdrop />}
         {isShown && <Modal onClose={closeModal} />}

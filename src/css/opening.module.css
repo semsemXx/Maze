@@ -92,9 +92,15 @@ button:hover
     transform: scale(1.2);
 }
 @media (max-width: 600px) {
+    body{
+      width: 425px;
+      height: 718px;
+      overflow: hidden;
+    }
+  
     .container {
-     background-color: transparent;
-     width: 370px;
+     background-color: black;
+     width: 400px;
      height: 0px;
      position: relative;
      top: 1000px;
@@ -102,116 +108,67 @@ button:hover
     }
   
     .video {
-      min-width: 800px;
-      min-height: 375px;
+      min-width: 770px;
+      min-height: 424px;
       object-fit: fill;
-
-      
       opacity: 0.25;
       position: relative;
-      top: 40px;
-      right: 250px;
+      top: 170px;
+      right: 180px;
       transform: rotate(90deg);
-
+      
     }
-  
     .image {
       width: 0%;
-      opacity: 0.3;
+      opacity: 0;
       visibility: hidden;
     }
   
     p {
-      font-size: 24px;
+      font-size: 30px;
       letter-spacing: 1.5px;
-      bottom: 1300px;
+      bottom: 1320px;
     }
   
     .logo {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       bottom: 1400px;
-      left: 36%;
+      left: 25%;
     }
   
     .no,
     .yes {
-      width: 180px;
-      height: 150px;
+      width: 200px;
+      height: 180px;
+      right: 50%;
     }
   
     .no {
       bottom: 1255px;
-      left: 53%;
+      left: 52%;
     }
   
     .yes {
-      bottom: 1405px;
-      left: 1%;
+      bottom: 1437px;
+      left: 0%;
+      right: 100px;
     }
   
     .ye,
     .noo {
-      font-size: 24px;
-      bottom: 1500px;
+      font-size: 30px;
+      bottom: 1548px;
+      
     }
   
     .ye {
-      left: 20%;
+      left: 19%;
     }
   
     .noo {
-      left: 65%;
+      left: 64%;
     }
   
-    .modal {
-      width: 90%;
-      height: auto;
-      bottom: 500px;
-      left: 5%;
-      font-size: 20px;
-      padding: 20px;
-    }
-  
-    .modal p {
-      width: 90%;
-      top: 20px;
-      left: 5%;
-      font-size: 18px;
-    }
-  
-    .star {
-      width: 40px;
-      height: 35px;
-    }
-  
-    .star1 {
-      left: 70%;
-      bottom: 10px;
-    }
-  
-    .star2 {
-      left: 30%;
-      top: 10px;
-    }
-  
-    .star3 {
-      left: 15%;
-      bottom: 50px;
-    }
-  
-    .star4 {
-      left: 60%;
-      bottom: 10px;
-    }
-  
-    .star5 {
-      left: 5%;
-      bottom: 20px;
-    }
-  
-    .btn {
-      font-size: 18px;
-      width: 80px;
-    }
+    
   }

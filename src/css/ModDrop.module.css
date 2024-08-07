@@ -127,3 +127,103 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 600px) 
+{
+    .modal {
+        background-color: rgb(255, 255, 255);
+        width: 330px;
+        height: 220px;
+        font-size: 40px;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+        bottom: 1700px;
+        margin-left: -230px;
+        outline: 3px solid rgb(178, 175, 175);
+        box-shadow: 0 0 40px 5px rgba(255, 255, 255, 0.171);
+        background-image: url("../image/messageYes.jpg");
+        background-attachment: relative;
+        background-position: center;
+        background-position-y: 330px;
+        background-position-x: -140px;
+        border-radius: 8px;
+        animation: dropdown 0.3s ease-out; 
+    }
+    
+    .modal p {
+        width: 300px;
+        position: relative;
+        top: 46px;
+        margin-left: -25px;
+        font-size: 28px;
+        z-index: 10;
+        letter-spacing: 2px;
+    }
+    
+    .star {
+        opacity: 0;
+    }
+    
+    .animate {
+        animation: fading 2s infinite;
+    }
+    
+    .star1 {
+        animation-delay: 0s;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        left: 270px;
+        bottom: 110px;
+    }
+    
+    .star2 {
+        animation-delay: 0.5s;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        left: 250px;
+        margin-top: -60px;
+    }
+    
+    .star3 {
+        animation-delay: 1s;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        left: 125px;
+        top: 60px;
+    }
+    
+    .star4 {
+        animation-delay: 1.5s;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        left: 80px;
+        bottom: 135px;
+    }
+    
+    .star5 {
+        animation-delay: 2s;
+        width: 40px;
+        height: 30px;
+        position: relative;
+        left: 20px;
+        bottom: 30px;
+    }
+    
+    .btn {
+        transition: all 0.3s;
+        letter-spacing: 1px;
+        font-size: 30px;
+        position: relative;
+        top: 30px;
+        background-color: aliceblue;
+        color: black;
+        width: 100px;
+        border-radius: 8px;
+    }
+
+}

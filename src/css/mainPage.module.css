@@ -1,9 +1,110 @@
-.mainPage {
-    background-color: white;
-  }
-  
-  .mainPageParagraph {
-    color: black; 
-    background-color: red;
-  }
-  
+
+.base {
+    height: 680px;
+    background-color: black;
+}
+
+.lightContainer {
+    position: relative;
+}
+
+.whiteLight, .blackLight {
+    width: 1000px;
+    height: 700px;
+    position: absolute;
+    left: 50%;
+    margin-top: -27px;
+    transform: translateX(-50%);
+    opacity: 0; 
+    transition: opacity 0.2s ease-in-out;
+}
+
+.blackLight
+{
+    margin-left: 2px;
+}
+.whiteLight.show {
+    opacity: 1;
+}
+
+.blackLight.show {
+    opacity: 1;
+}
+
+.FatStarGif1
+{
+    width: 105px;
+    height: auto;
+    position: relative;
+    left: 585px;
+    top: 110px;
+}
+.FatStarGif2
+{
+    width: 70px;
+    height: auto;
+    position: relative;
+    left: 1005px;
+    top: 80px;
+}
+.FatStarGif3
+{
+    width: 95px;
+    height: auto;
+    position: relative;
+    left: 1250px;
+    top: 130px;
+}
+.FatStarGif4
+{
+    width: 70px;
+    height: auto;
+    position: relative;
+    left: 170px;
+    top: 140px;
+}
+.ThinStarGif1
+{
+    width: 90px;
+    height: auto;
+    position: relative;
+    left: 260px;
+    bottom: 50px;
+}
+.ThinStarGif2
+{
+    width: 115px;
+    height: auto;
+    position: relative;
+    left: 240px;
+    top: 240px;
+}
+.ThinStarGif3
+{
+    width: 90px;
+    height: auto;
+    position: relative;
+    left: 940px;
+    top: 255px;
+}
+.base p 
+{
+    color: white;
+    font-family: 'maze';
+    position: relative;
+    left: 370px;
+    top: 125px;
+    font-size: 45px;
+    animation: appearence 2s;
+}
+@keyframes appearence {
+    0%
+    {
+     opacity: 0;
+    }
+    100%
+    {
+      opacity: 1;
+    }
+    
+}

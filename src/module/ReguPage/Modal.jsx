@@ -22,7 +22,7 @@ export default function Modal({ onClose }) {
     onClose();
     setTimeout(() => {
       navigate('/Main-Page'); 
-    }, 10);
+    }, 0.1);
   };
 
   return (

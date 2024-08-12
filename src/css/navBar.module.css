@@ -1,11 +1,89 @@
-.navBar 
-{
-    background-color: #bbb5b5;
+.navBar {
+    background-color: #000000;
+    justify-content: center;
+    align-items: center; 
+    height: 112px;
     display: flex;
-    
-}
-.navBar ul 
-{
-    margin-right: 200px;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .navList {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    position: relative;
+    top: 33px;
+  }
+  
+  .navList li {
+    margin: 0 110px; 
+    margin-top: 7px;
+  }
+  
+  .navButton {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  .navLink {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'maze';
+    font-size: 28px;
+    position: relative;
+    top: 6px;
+    left: 455px;
+  }
+  .navLink:hover  , .LeftNavBut:hover{
+    text-decoration: underline;
+  }
+  .logoContainer {
+    width: 120px; 
+    height: 80px;
+    margin-top: 0px;
     margin-left: 200px;
-}
+  }
+  .LeftNavBut
+  {
+    font-size: 35px;
+    letter-spacing: 2px ;
+    font-family: 'maze';
+    font-weight: 10;
+  }
+  .bars i , .cart i 
+  {
+    font-size: 31px;
+    cursor: pointer;
+    color: white;
+  }
+  .bars i:hover , .cart i:hover 
+  {
+    transform: scale(1.2);
+    transition: all 0.3s;
+  }
+  .containerBars
+  {
+    position: relative;
+    right: 270px;
+  }
+  .mazeLogo 
+  {
+    width: 135px;
+    height: auto ; 
+    cursor: pointer;
+    position: relative;
+    left: 90px;
+    bottom: 10px;
+  }
+  .lineNav {
+    margin-top: 10px;
+  }
+  .cart 
+  {
+     position: relative;
+     left: 270px;
+     top: 10px;
+  }

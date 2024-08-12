@@ -17,7 +17,7 @@ export default function Opening() {
 
   return (
     <div className={classes.Div}>
-      <video className={classes.video} autoPlay loop muted>
+      <video className={classes.video} autoPlay loop muted playsInline>
         <source src={Mateha} type="video/mp4" />
       </video>
       <div className={classes.container}>

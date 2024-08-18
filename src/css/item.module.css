@@ -1,0 +1,66 @@
+.container {
+    margin-right: 30px;
+    height: 480px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.cadre {
+    width: auto;
+    height: 480px;
+    position: relative;
+    z-index: 13; 
+    cursor: pointer;
+}
+.cadre:hover  
+{
+    transform: scale(1.01);
+    transition: all 0.2s;
+}
+.cadre:hover + .content {
+    transform: scaleY(1.06);
+    transition: all 0.2s;
+}
+.cadre:hover ~ .content ~ .shirt {
+    animation: shirtAnim 0.2s forwards;
+}
+.content {
+    font-family: 'Maze';
+    text-align: center;
+    position: relative;
+    bottom: 240px;
+    right: 366px;
+    z-index: 12; 
+}
+
+.content p {
+    font-size: 30px;
+    margin-top: 2px;
+}
+
+.content .price {
+    color: rgb(255, 255, 255);
+}
+
+.shirt {
+    width: 332px;
+    height: auto;
+    position: relative;
+    bottom: 520px;
+    z-index: 11;
+}
+
+.content .name {
+    color: rgb(255, 255, 255);
+}
+
+@keyframes shirtAnim{
+    0%
+    {
+      width: 332px;
+    }
+    100%
+    {
+      width: 334px;
+    }
+}

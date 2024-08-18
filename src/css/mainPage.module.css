@@ -157,7 +157,7 @@
     bottom: 500px;
     z-index: 10;
 }
-footer li , footer .CopyRight
+footer li 
 {
     font-family: 'maze'; 
 }
@@ -175,5 +175,5 @@ footer .CopyRight
     bottom: 610px;
     color: white;
     text-align: center;
-    font-size: 29px;
+    font-size: 21px;
 } 

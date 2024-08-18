@@ -1,15 +1,16 @@
 .container {
-    height: 500px;
     margin-right: 20px;
     background-color: black;
     border-radius: 50px;
+    height: 480px;
 }
 
 .cadre {
     width: auto;
-    height: 500px;
+    height: 480px;
     position: relative;
     z-index: 12; 
+    cursor: pointer;
 }
 
 .content {
@@ -23,6 +24,7 @@
 
 .content p {
     font-size: 30px;
+    cursor: pointer;
 }
 
 .content .price {
@@ -34,7 +36,8 @@
     height: auto;
     position: relative;
     bottom: 540px;
-    z-index: 11; /* Ensure shirt is above CircleDeco */
+    z-index: 11; 
+    cursor: pointer;
 }
 
 .content .name {

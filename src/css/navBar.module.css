@@ -62,7 +62,7 @@
     cursor: pointer;
     color: white;
   }
-  .bars i:hover , .cart i:hover 
+  .bars i:hover , .cart i:hover , .social i:hover  
   {
     transform: scale(1.2);
     transition: all 0.3s;
@@ -100,6 +100,19 @@
     object-fit: cover;
     z-index: -1; 
     opacity: 0.1;
+  }
+  .social 
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 6rem;
+    margin-right: 1.25rem;
+  }
+  .social i 
+  {
+    margin-right: 22px;
   }
   .navBar.hidden {
     transform: translateY(-100%);

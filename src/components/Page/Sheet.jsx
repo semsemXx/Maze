@@ -49,16 +49,16 @@ export default function SheetSide() {
             </SheetTitle>
           </div>
           <SheetFooter className="flex flex-col items-center mb-4">
-            <div className="flex justify-center items-center space-x-5 w-full mt-24">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-facebook-f text-white text-2xl cursor-pointer"></i>
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-instagram text-white text-2xl cursor-pointer"></i>
-              </a>
-              <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-                <i className="fa-brands fa-tiktok text-white text-2xl cursor-pointer"></i>
-              </a>
+            <div className={classes.social}>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-facebook-f text-white text-2xl cursor-pointer"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-instagram text-white text-2xl cursor-pointer"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                  <i className="fa-brands fa-tiktok text-white text-2xl cursor-pointer"></i>
+                </a>
             </div>
           </SheetFooter>
           <p className="text-white text-sm mb-5 ml-6">&copy; All rights are reserved Mateha Streetwear</p>

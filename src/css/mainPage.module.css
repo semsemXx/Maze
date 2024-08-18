@@ -1,7 +1,8 @@
 
 .base {
-    height: 680px;
-    background-color: black;
+    height: 2400px;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
 }
 
 .lightContainer {
@@ -108,3 +109,71 @@
     }
     
 }
+.NewColl 
+{
+    margin-top: 380px;
+    width: 400px;
+    text-align: center;
+    height: 300px;
+}
+.NewColl h1 
+{
+    color: white;
+    font-family: 'maze';
+    font-size: 50px;
+}
+.NewColl img 
+{
+    position: relative;
+    bottom: 175px;
+}
+.UpStar
+{
+    margin-left: 120px;
+    position: relative;
+    bottom: 220px;
+    width: 1150px;
+}
+.DownStar
+{
+    margin-left: 80px;
+    position: relative;
+    bottom: 480px;
+    width: 1150px;
+}
+.CircleDeco {
+    height: auto;
+    width: 400px;
+    z-index: 0; 
+    margin-left: 1240px;
+    position: relative; 
+    bottom: 400px;
+}
+
+.ProdContainer {
+    display: flex;
+    justify-content: center;
+    position: relative; 
+    bottom: 500px;
+    z-index: 10;
+}
+footer li , footer .CopyRight
+{
+    font-family: 'maze'; 
+}
+footer li
+{
+    position: relative;
+    bottom: 700px;
+    font-size: 29px;
+    color: white;
+    text-align: center;
+}
+footer .CopyRight 
+{
+    position: relative;
+    bottom: 610px;
+    color: white;
+    text-align: center;
+    font-size: 29px;
+} 

@@ -1,0 +1,42 @@
+.container {
+    height: 500px;
+    margin-right: 20px;
+    background-color: black;
+    border-radius: 50px;
+}
+
+.cadre {
+    width: auto;
+    height: 500px;
+    position: relative;
+    z-index: 12; 
+}
+
+.content {
+    font-family: 'Maze';
+    text-align: center;
+    position: relative;
+    bottom: 240px;
+    right: 366px;
+    z-index: 12; 
+}
+
+.content p {
+    font-size: 30px;
+}
+
+.content .price {
+    color: rgb(205, 174, 0);
+}
+
+.shirt {
+    width: 350px;
+    height: auto;
+    position: relative;
+    bottom: 540px;
+    z-index: 11; /* Ensure shirt is above CircleDeco */
+}
+
+.content .name {
+    color: rgb(255, 255, 255);
+}

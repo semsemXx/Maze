@@ -1,30 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import classes from '@/css/productPage.module.css';
 import CadreProd from '@/image/cadre-.png';
 import Merch from '@/image/shirt.png';
+import Backdrop from './ReguPage/Backdrop';
+import ModalProductPage from './ReguPage/ModalProductPage';
+import ModalProductPageView from './ReguPage/ModalProductPageView';
 
 export default function ProductPage(props) {
-  
   const [selectedSize, setSelectedSize] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const ProdContainerRef = useRef(null);
+  const location = useLocation();
+  const [isShown, setIsShown] = useState(false);
+  const [isAppearing, setIsAppearing] = useState(false);
+
+
+  useEffect(() => {
+    
+    if (location.state?.scrollToProdContainer && ProdContainerRef.current) {
+      ProdContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
 
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  useEffect(() => {
+    props.onBackdropToggle(isShown);
+  }, [isShown]);
+
+  useEffect(() => {
+    props.onBackdropToggle(isAppearing);
+  }, [isAppearing]);
   return (
-    <div className={classes.ProdContainer}>
+    <div className={classes.ProdContainer} ref={ProdContainerRef}>
       <div className={classes.PicturesSide}>
         <div className={classes.image1}>
-          <img src={CadreProd} className={classes.cadre} />
-          <img src={Merch} className={classes.merch} />
+          <img src={CadreProd} className={classes.cadre} alt="Cadre" />
+          <img src={Merch} className={classes.merch} alt="Merch" />
         </div>
         <div className={classes.image2}>
-          <img src={CadreProd} className={classes.cadre} />
-          <img src={Merch} className={classes.merch} />
+          <img src={CadreProd} className={classes.cadre} alt="Cadre" />
+          <img src={Merch} className={classes.merch} alt="Merch" />
         </div>
         <div className={classes.image3}>
-          <img src={CadreProd} className={classes.cadre} />
-          <img src={Merch} className={classes.merch} />
+          <img src={CadreProd} className={classes.cadre} alt="Cadre" />
+          <img src={Merch} className={classes.merch} alt="Merch" />
         </div>
       </div>
       <div className={classes.ContentSide}>
@@ -34,53 +65,46 @@ export default function ProductPage(props) {
             <p>{props.price}DT</p>
           </div>
           <div className={classes.meaning}>
-            <p>{props.name} Meaning</p>
-            <button>View</button>
+            <p className={classes.prodname}>{props.name} Meaning</p>
+            <button  onClick={()=> {
+              setIsAppearing(true);
+            }}>View</button>
+            {isAppearing && <Backdrop/>}
+            {isAppearing && <ModalProductPageView setIsAppearing={setIsAppearing} content={props.content} />}
           </div>
           <div className={classes.Color}>
             <p>COLOR :</p>
             <button className={classes.black1}></button>
             <button className={classes.black2}></button>
-            <button className={classes.interogation}>(?)</button>
+            <button className={classes.interogation}  onClick={()=> {
+              setIsShown(true);
+            }}>(?)</button>
+            {isShown && <Backdrop/>}
+            {isShown && <ModalProductPage setIsShown={setIsShown} />}
           </div>
           <div className={classes.size}>
             <p>SIZE :</p>
-            <button
-              className={`${classes.S} ${selectedSize === 'S' ? classes.selected : ''}`}
-              onClick={() => handleSizeClick('S')}
-            >
-              S
-            </button>
-            <button
-              className={`${classes.M} ${selectedSize === 'M' ? classes.selected : ''}`}
-              onClick={() => handleSizeClick('M')}
-            >
-              M
-            </button>
-            <button
-              className={`${classes.L} ${selectedSize === 'L' ? classes.selected : ''}`}
-              onClick={() => handleSizeClick('L')}
-            >
-              L
-            </button>
-            <button
-              className={`${classes.XL} ${selectedSize === 'XL' ? classes.selected : ''}`}
-              onClick={() => handleSizeClick('XL')}
-            >
-              XL
-            </button>
-            <button
-              className={`${classes.XXL} ${selectedSize === 'XXL' ? classes.selected : ''}`}
-              onClick={() => handleSizeClick('XXL')}
-            >
-              XXL
-            </button>
+            {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+              <button
+                key={size}
+                className={`${classes[size]} ${selectedSize === size ? classes.selected : ''}`}
+                onClick={() => handleSizeClick(size)}
+              >
+                {size}
+              </button>
+            ))}
           </div>
-          <div className={classes.Select}>
+          <div className={`${classes.Select} ${isHovered ? classes.hovered : ''}`}>
             {!selectedSize ? (
               <p>SELECT A SIZE</p>
             ) : (
-              <button className={classes.addToCart}>ADD TO CART</button>
+              <button 
+                className={classes.addToCart} 
+                onMouseEnter={handleMouseEnter} 
+                onMouseLeave={handleMouseLeave}
+              >
+                ADD TO CART
+              </button>
             )}
           </div>
           <div className={classes.lineBetween}></div>

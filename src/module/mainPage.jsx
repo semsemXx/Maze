@@ -29,7 +29,7 @@ export default function MainPage() {
       <img src={UpStar} className={classes.UpStar}/>
       <img src={CircleDeco} className={classes.CircleDeco}/>
       <div className={classes.ProdContainer}>
-        <ImageComponent name="Mateha1" price={40} path="/ProductPage1"/>
+        <ImageComponent name="Mateha1" price={40} path="/ProductPage1" />
         <ImageComponent name="Mateha2" price={60} path="/ProductPage2"/>
         <ImageComponent name="Mateha3" price={70} path="/ProductPage3"/>
         <ImageComponent name="Mateha4" price={50} path="/ProductPage4"/>

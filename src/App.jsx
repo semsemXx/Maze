@@ -24,7 +24,7 @@ export default function App() {
         <Route
           path="/ProductPage1"
           element={<ProductPage 
-            name="Faten" 
+            name="mateha" 
             price={20} 
             onBackdropToggle={handleBackdropToggle} 
             content="Delve into the depths of perception with a thought-provoking mantra delicately inscribed on its high quality fabric. Embodying the enigma of existence, this tee beckons contemplation, reminding us of the paradox within our sight. Adorned with a concealed guardian (a 3D eye on the back) it whispers of hidden safeguards against life's lurking uncertainties. Adorn yourself with this embodiment of profound mystery, where fashion and philosophy converge."

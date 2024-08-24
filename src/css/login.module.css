@@ -1,0 +1,224 @@
+body{
+    overflow-x: hidden;
+}
+.topBar {
+    width: 100%;
+    height: 20px;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    display: flex;
+    font-family: 'Maze';
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+}
+.LoginDiv {
+    background-color: black;
+    
+    height: 750px;
+    width: 1550px;
+    right: 7px;
+    position: relative;
+}
+
+.loginbut, .signupbut {
+    font-size: 26px;
+    width: 370px;
+    height:50px;
+    position: relative;
+    top: 200px;
+    font-family: 'Maze';
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid white;
+}
+
+.loginbut {
+    color: white;
+    background-color: black;
+    left: 5px;
+}
+
+.signupbut {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    left: 745px;
+}
+
+.loginbut.active {
+    background-color: white;
+    color: black;
+}
+
+.signupbut.active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.mail, .pass ,.firstname,.lastname,.password,.phone,.email{
+    background-color: black;
+    width: 350px;
+    height: 40px;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.loginDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px; 
+    position: relative;
+    top: 300px;
+    right: 20px;
+}
+
+.mail, .pass {
+    background-color: black;
+    width: 350px;
+    height: 40px;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.loginclick {
+    font-size: 26px;
+    color: black;
+    background-color: white;
+    width: 150px;
+    height: 40px;
+    font-family: 'Maze';
+    cursor: pointer;
+}
+.firstname{
+    position: relative;
+    top: 250px;
+}
+.lastname{
+    position: relative;
+    top: 320px;
+}
+.email{
+    position: relative;
+    top: 390px;
+}
+.password{
+    position: relative;
+    top: 450px;
+}
+.phone{
+    position: relative;
+    top: 550px;
+}
+.signupDetails {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px; 
+    justify-items: center; 
+    align-content: center; 
+    height: 300px;
+    position: relative;
+    top: 280px;
+    right: 20px;
+}
+
+.signupDetails input {
+    width: 350px; 
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+}
+
+.firstname, .lastname, .email, .password, .phone {
+    position: static;
+}
+.create{
+    font-size: 26px;
+    color: black;
+    background-color: white;
+    width: 150px;
+    height: 40px;
+    position: relative;
+    top:20px;
+    font-family: 'Maze';
+}
+.forgot{
+    font-family: 'Maze';
+    color: white;
+    position: relative;
+    bottom: 70px;
+    left: 113px;
+    font-size: 19px;
+
+}
+.remember{
+    font-family: 'Maze';
+    color: white;
+    font-size: 19px;
+    position: relative;
+    right: 125px;
+    bottom: 6px;
+}
+
+.checkbox {
+    height: 18px;
+    width: 18px;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    border-width: 1px;
+    border-color: #ffffff;
+    position: relative;
+    bottom: 38px;
+    cursor: pointer;
+    right: 38px;
+    font-size: 12px;
+    font-family: 'Maze';
+    transition: background-color 0.3s ease;
+    position: relative;
+    bottom: 7px;
+    right: 115px;
+}
+
+.checkbox.checked {
+    background-color: white; 
+    color: black; 
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Maze';
+}
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    background-color: #000000; 
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001; 
+    height: 300px;
+    width: 600px;
+    border-width: 1px;
+    border-color: #ffffff;
+    
+
+}
+.notification p{
+    text-align: center;
+    font-family: 'Maze';
+    font-size: 24px;
+    position: relative;
+    top: 100px;
+}
+.blur {
+    filter: blur(5px);
+    transition: filter 0.3s ease; 
+}

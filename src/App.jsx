@@ -4,6 +4,7 @@ import Opening from './module/opening';
 import MainPage from './module/mainPage';
 import Login from './module/login';
 import NavBar from './components/Page/NavBar';
+import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
 
 export default function App() {
@@ -16,7 +17,8 @@ export default function App() {
 
   return (
     <div>
-      {location.pathname !== '/' && !isBackdropShown && <NavBar />}
+      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && <NavBar />}
+      {location.pathname == '/Login' && <NavBar2 />}
       <Routes>
         <Route path="/" element={<Opening />} />
         <Route path="/Main-Page" element={<MainPage />} />

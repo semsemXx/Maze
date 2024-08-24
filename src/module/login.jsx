@@ -35,7 +35,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className={classes.Login}>
       <div className={classes.topBar}>Free shipping for your first order!</div>
       <div className={`${classes.LoginDiv} ${isAccountCreated || isLoginSuccessful ? classes.blur : ''}`}>
         <button

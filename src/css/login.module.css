@@ -1,5 +1,6 @@
-body{
-    overflow-x: hidden;
+.Login 
+{
+    overflow: hidden;
 }
 .topBar {
     width: 100%;
@@ -14,12 +15,11 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 50; 
 }
 .LoginDiv {
     background-color: black;
-    
-    height: 750px;
+    height: 729px;
     width: 1550px;
     right: 7px;
     position: relative;

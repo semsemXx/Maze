@@ -16,7 +16,7 @@
     list-style: none;
     justify-content: space-around;
     position: relative;
-    top: 20px;
+    top: 38px;
   }
   
   .navList li {
@@ -88,7 +88,7 @@
   }
   .lineNav {
     position: relative;
-    bottom: 9px;
+    top: 9px;
   }
   .cart 
   {

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import classes from '@/css/navBar.module.css';
+import classes from '@/css/navBar2.module.css';
 import maze from '@/gif/gifWhiteLogo.gif';
 import SheetSide from '@/components/Page/Sheet';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import lineNav from "@/image/lineNav.png";
 
-export default function NavBar() {
+export default function NavBar2() {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 

@@ -65,7 +65,12 @@
     cursor: pointer;
     color: white;
   }
-  .bars i:hover , .cart i:hover , .social i:hover  
+
+  .closeBut
+  {
+    margin-left: 15px;
+  }
+  .bars i:hover , .cart i:hover , .social i:hover  , .closeBut i:hover
   {
     transform: scale(1.2);
     transition: all 0.3s;

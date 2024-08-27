@@ -28,8 +28,8 @@
     font-family: 'Maze';
     text-align: center;
     position: relative;
-    bottom: 240px;
-    right: 366px;
+    bottom: 200px;
+    right: 315px;
     z-index: 12; 
 }
 
@@ -62,5 +62,15 @@
     100%
     {
       width: 334px;
+    }
+}
+@keyframes appearence {
+    0%
+    {
+    opacity: 0;
+    }
+    100%
+    {
+    opacity: 1;
     }
 }

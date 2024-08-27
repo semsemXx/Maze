@@ -32,6 +32,15 @@ export default function App() {
             content="Delve into the depths of perception with a thought-provoking mantra delicately inscribed on its high quality fabric. Embodying the enigma of existence, this tee beckons contemplation, reminding us of the paradox within our sight. Adorned with a concealed guardian (a 3D eye on the back) it whispers of hidden safeguards against life's lurking uncertainties. Adorn yourself with this embodiment of profound mystery, where fashion and philosophy converge."
           />}
         />
+        <Route
+          path="/ProductPage2"
+          element={<ProductPage 
+            name="zeb123" 
+            price={0.500} 
+            onBackdropToggle={handleBackdropToggle} 
+            content="Delic"
+          />}
+        />
       </Routes>
     </div>
   );

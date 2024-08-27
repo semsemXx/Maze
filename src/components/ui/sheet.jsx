@@ -2,8 +2,7 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva } from "class-variance-authority";
-import { X } from "lucide-react"
-
+import classes from '@/css/navBar.module.css';
 import { cn } from "@/lib/utils"
 
 const Sheet = SheetPrimitive.Root
@@ -51,8 +50,7 @@ const SheetContent = React.forwardRef(({ side = "right", className, children, ..
       {children}
       <SheetPrimitive.Close
         className="absolute top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-        <X className="h-8 w-8 text-white cursor-pointer ml-4 mt-2"/>
-        <span className="sr-only">Close</span>
+        <button className={classes.closeBut}><i class="fa-solid fa-xmark cursor-pointer text-3xl text-white"></i></button>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
   </SheetPortal>

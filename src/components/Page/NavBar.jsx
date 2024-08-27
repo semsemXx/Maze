@@ -44,9 +44,9 @@ export default function NavBar() {
             <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
           </li>
           <li>
-            <button className={classes.cart}>
+            <Link to='/Cart' className={classes.cart}>
               <i className="fa-solid fa-cart-shopping"></i>
-            </button>
+            </Link>
           </li>
         </ul>
         <img src={lineNav} className={classes.lineNav} />

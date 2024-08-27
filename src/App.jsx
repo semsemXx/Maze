@@ -6,6 +6,8 @@ import Login from './module/login';
 import NavBar from './components/Page/NavBar';
 import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
+import Cart from './module/cart'
+import Checkout from './module/checkout';
 
 export default function App() {
   const location = useLocation();
@@ -23,6 +25,8 @@ export default function App() {
         <Route path="/" element={<Opening />} />
         <Route path="/Main-Page" element={<MainPage />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Checkout" element={<Checkout />} />
         <Route
           path="/ProductPage1"
           element={<ProductPage 

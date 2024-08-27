@@ -1,179 +1,270 @@
-
-.base {
-    height: 2210px;
-    background-color: rgb(0, 0, 0);
-    overflow: hidden;
-}
-
-.lightContainer {
-    position: relative;
-}
-
-.whiteLight, .blackLight {
-    width: 1000px;
-    height: 700px;
-    position: absolute;
-    left: 50%;
-    margin-top: -27px;
-    transform: translateX(-50%);
-    opacity: 0; 
-    transition: opacity 0.2s ease-in-out;
-}
-
-.blackLight
-{
-    margin-left: 2px;
-}
-.whiteLight.show {
-    opacity: 1;
-}
-
-.blackLight.show {
-    opacity: 1;
-}
-
-.FatStarGif1
-{
-    width: 105px;
-    height: auto;
-    position: relative;
-    left: 585px;
-    top: 110px;
-}
-.FatStarGif2
-{
-    width: 70px;
-    height: auto;
-    position: relative;
-    left: 1005px;
-    top: 80px;
-}
-.FatStarGif3
-{
-    width: 95px;
-    height: auto;
-    position: relative;
-    left: 1250px;
-    top: 130px;
-}
-.FatStarGif4
-{
-    width: 70px;
-    height: auto;
-    position: relative;
-    left: 170px;
-    top: 140px;
-}
-.ThinStarGif1
-{
-    width: 90px;
-    height: auto;
-    position: relative;
-    left: 260px;
-    bottom: 50px;
-}
-.ThinStarGif2
-{
-    width: 115px;
-    height: auto;
-    position: relative;
-    left: 240px;
-    top: 240px;
-}
-.ThinStarGif3
-{
-    width: 90px;
-    height: auto;
-    position: relative;
-    left: 940px;
-    top: 255px;
-}
-.base p 
-{
-    color: white;
-    font-family: 'maze';
-    position: relative;
-    left: 370px;
-    top: 125px;
-    font-size: 45px;
-    animation: appearence 2s;
-}
-@keyframes appearence {
-    0%
+    .container
     {
-     opacity: 0;
+        background-color: rgb(0, 0, 0);
     }
-    100%
+    .mazeLoadingLogo
     {
-      opacity: 1;
+        width: 180px;
+        height: auto;
+        position: relative;
+        bottom: 150px;
+        right: 115px;
     }
-    
-}
-.NewColl 
-{
-    margin-top: 380px;
-    width: 400px;
-    text-align: center;
-    height: 300px;
-}
-.NewColl h1 
-{
-    color: white;
-    font-family: 'maze';
-    font-size: 50px;
-}
-.NewColl img 
-{
-    position: relative;
-    bottom: 175px;
-}
-.UpStar
-{
-    margin-left: 120px;
-    position: relative;
-    bottom: 220px;
-    width: 1150px;
-}
-.DownStar
-{
-    margin-left: 80px;
-    position: relative;
-    bottom: 480px;
-    width: 1150px;
-}
-.CircleDeco {
-    height: auto;
-    width: 400px;
-    z-index: 0; 
-    margin-left: 1240px;
-    position: relative; 
-    bottom: 400px;
-}
+    .loadingScreen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 70px;
+        font-family: 'maze';
+        color: rgb(224, 224, 224);
+        z-index: 100;
+        overflow: hidden; 
+    }
+      .loadingScreen.hidden {
+        display: none;
+      }
+      .Loading
+      {
+        position: relative;
+        left: 90px;
+      }
+      .base {
+        height: 2245px;
+        background-color: rgb(0, 0, 0);
+        opacity: 0;
+        overflow: hidden; 
+      }
+      
+      .base.loaded {
+        opacity: 1;
+        transition: all 0.2s;
+      }
 
-.ProdContainer {
-    display: flex;
-    justify-content: center;
-    position: relative; 
-    bottom: 500px;
-    z-index: 10;
-}
-footer li 
-{
-    font-family: 'maze'; 
-}
-footer li
-{
-    position: relative;
-    bottom: 700px;
-    font-size: 29px;
-    color: white;
-    text-align: center;
-}
-footer .CopyRight 
-{
-    position: relative;
-    bottom: 610px;
-    color: white;
-    text-align: center;
-    font-size: 21px;
-} 
+    .lightContainer {
+        position: relative;
+    }
+
+    .whiteLight, .blackLight {
+        width: 1200px;
+        height: 900px;
+        position: absolute;
+        left: 50%;
+        margin-top: -30px;
+        transform: translateX(-50%);
+        opacity: 0; 
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .blackLight
+    {
+        margin-left: 2px;
+    }
+    .whiteLight.show {
+        opacity: 1;
+    }
+
+    .blackLight.show {
+        opacity: 1;
+    }
+     
+    .FatStarGif1 
+    {
+        width: 150px;
+        height: auto;
+        position: relative;
+        left: 540px;
+        top: 135px;
+    }
+    .FatStarGif2
+    {
+        width: 110px;
+        height: auto;
+        position: relative;
+        left: 1005px;
+        top: 70px;
+    }
+    .FatStarGif3
+    {
+        width: 130px;
+        height: auto;
+        position: relative;
+        left: 1300px;
+        top: 140px;
+    }
+    .FatStarGif4
+    {
+        width: 110px;
+        height: auto;
+        position: relative;
+        left: 30px;
+        top: 230px;
+    }
+    .ThinStarGif1
+    {
+        width: 130px;
+        height: auto;
+        position: relative;
+        left: 65px;
+        bottom: 80px;
+    }
+    .ThinStarGif2
+    {
+        width: 135px;
+        height: auto;
+        position: relative;
+        left: 100px;
+        top: 280px;
+    }
+    .ThinStarGif3
+    {
+        width: 130px;
+        height: auto;
+        position: relative;
+        left: 1320px;
+        top: 120px;
+    }
+    .base p 
+    {
+        color: white;
+        font-family: 'maze';
+        position: relative;
+        left: 320px;
+        top: 90px;
+        font-size: 55px;
+        animation: appearence 2s;
+        animation-delay: 1.5s;
+    }
+    @keyframes appearence {
+        0%
+        {
+        opacity: 0;
+        }
+        100%
+        {
+        opacity: 1;
+        }
+        
+    }
+    .MoreStar1
+    {
+        width: 25px;
+        height: auto;
+        position: relative;
+        top: 340px;
+        left: 25px;
+    }
+    .MoreStar2
+    {
+        width: 30px;
+        height: auto;
+        position: relative;
+        top: 350px;
+        left: 200px;
+    }
+    .MoreStar3
+    {
+        width: 20px;
+        height: auto;
+        position: relative;
+        top: 365px;
+        left: 700px;
+    }
+    .NewColl 
+    {
+        margin-top: 200px;
+        width: 350px;
+        text-align: center;
+        height: 300px;
+        position: relative;
+        top: 240px;
+    }
+    .NewColl h1 
+    {
+        color: white;
+        font-family: 'maze';
+        font-size: 50px;
+    }
+    .NewColl img 
+    {
+        position: relative;
+        bottom: 175px;
+    }
+    .UpStar
+    {
+        margin-left: 120px;
+        position: relative;
+        bottom: 90px;
+        width: 1150px;
+    }
+    .DownStar
+    {
+        margin-left: 80px;
+        position: relative;
+        bottom: 480px;
+        width: 1150px;
+    }
+    .CircleDeco {
+        height: auto;
+        width: 600px;
+        z-index: 0; 
+        margin-left: 1210px;
+        position: relative; 
+        bottom: 550px;
+    }
+    .ToLower
+    {
+        margin-top: -430px;
+    }
+    .ProdContainer {
+        display: flex;
+        justify-content: center;
+        position: relative; 
+        bottom: 485px;
+        z-index: 10;
+    }
+    .FooterDiv
+    {
+        position: relative;
+        bottom: 780px;
+    }
+    footer li
+    {
+        position: relative;
+        font-size: 29px;
+        color: white;
+        text-align: center;
+        font-family: 'maze'; 
+    }
+    footer .CopyRight 
+    {
+        position: relative;
+        top: 50px;
+        left: 20px;
+        color: white;
+        text-align: center;
+        font-size: 21px;
+    } 
+    .IconUi {
+        width: 130px;
+        height: auto;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 100000;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .IconUi.rotate {
+        transform: rotate(360deg);
+      }
+      
+      .PreUiIcon img {
+        cursor: pointer;
+      }

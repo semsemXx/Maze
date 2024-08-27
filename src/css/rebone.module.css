@@ -1,0 +1,20 @@
+.reboneContainer {
+    background-color: white;
+    width: 2200px;
+    height: 60px;
+    margin-top: 320px;
+    margin-left: -20px;
+    transform: rotate(7deg); 
+    z-index: 10000;
+    position: relative;
+}
+.reboneContainer .scrollingText {
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -10px;
+    left: -700px;
+    letter-spacing: 1px;
+    word-spacing: 15px;
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}

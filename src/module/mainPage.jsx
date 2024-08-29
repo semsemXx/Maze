@@ -15,6 +15,8 @@ import Rebone from '@/module/Rebone';
 import MoreStar1 from '@/image/little-star-1.png';
 import MoreStar2 from '@/image/little-star-2.png';
 import maze from '@/gif/gifWhiteLogo.gif';
+import { Link } from 'react-router-dom';
+
 
 
 export default function MainPage() {
@@ -270,10 +272,10 @@ export default function MainPage() {
             className={classes.FooterDiv}
             ><footer>
           <ul>
-            <li>Terms</li>
-            <li>Contacts</li>
-            <li>Our philosophy</li>
-            <li>Login</li>
+            <li > <button className={classes.Term}>Terms</button></li>
+            <li > <button className={classes.Contact}>Contacts</button></li>
+            <li ><button className={classes.philosophy}>Our philosophy</button></li>
+            <li ><Link to='/Login' className={classes.Account}>Accounts</Link></li>
           </ul>
           <div className={classes.CopyRight}>All rights are reserved Mateha Streetwear &copy;</div>
         </footer>

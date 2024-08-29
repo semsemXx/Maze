@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Opening from './module/opening';
-import MainPage from './module/mainPage';
+import Opening from '@/module/opening';
+import MainPage from '@/module/mainPage';
 import Login from './module/login';
 import NavBar from './components/Page/NavBar';
 import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
-import Cart from './module/cart'
-import Checkout from './module/checkout';
+import Cart from '@/module/cart'
+import Checkout from '@/module/checkout';
 
 export default function App() {
   const location = useLocation();

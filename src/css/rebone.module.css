@@ -5,7 +5,7 @@
     margin-top: 320px;
     margin-left: -20px;
     transform: rotate(7deg); 
-    z-index: 10000;
+    z-index: 40;
     position: relative;
 }
 .reboneContainer .scrollingText {

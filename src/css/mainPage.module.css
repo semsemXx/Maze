@@ -36,7 +36,7 @@
         left: 90px;
       }
       .base {
-        height: 2245px;
+        height: 2290px;
         background-color: rgb(0, 0, 0);
         opacity: 0;
         overflow: hidden; 
@@ -234,7 +234,7 @@
         position: relative;
         bottom: 780px;
     }
-    footer li
+    footer  li
     {
         position: relative;
         font-size: 29px;
@@ -242,10 +242,19 @@
         text-align: center;
         font-family: 'maze'; 
     }
+    footer ul li .Account,
+    footer ul li .Term,
+    footer ul li .Contact,
+    footer ul li .philosophy
+    {
+        margin-top: 7px;
+        cursor: pointer;
+    }
+
     footer .CopyRight 
     {
         position: relative;
-        top: 50px;
+        top: 70px;
         left: 20px;
         color: white;
         text-align: center;

@@ -11,7 +11,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
 import Mateha from '@/video/matehaVid.mp4';
 
 const SIDE = "left";

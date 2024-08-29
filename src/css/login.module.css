@@ -259,3 +259,15 @@
         transform: translateX(0px);
     }
 }
+.errorInput {
+    border-color: rgb(97, 97, 97) !important;
+    background-image: none;
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
+  }
+  
+  .errorInput::placeholder {
+    color: rgb(41, 41, 41);
+    opacity: 1; 
+  }
+  

@@ -19,8 +19,8 @@ export default function App() {
 
   return (
     <div>
-      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && <NavBar />}
-      {location.pathname == '/Login' && <NavBar2 />}
+      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && location.pathname !=='/Checkout'&&<NavBar />}
+      {location.pathname == '/Login'  &&  <NavBar2 />}
       <Routes>
         <Route path="/" element={<Opening />} />
         <Route path="/Main-Page" element={<MainPage />} />

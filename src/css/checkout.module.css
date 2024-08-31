@@ -1,6 +1,11 @@
 body{
     overflow: hidden;
 }
+.InputDivv
+{
+  animation: InputDivv 1s forwards;
+
+}
 .Checkoutdiv{
     background-color: black;
     height: 729px;
@@ -28,7 +33,7 @@ body{
     color: #ffffff;
     font-family: 'Maze';
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
     top: 5px;
     left: 120px;
     width: 200px;
@@ -131,12 +136,12 @@ body{
     height: 40px;
     right: 590px;
     font-family: 'Maze';
+    font-size: 28px;
 }
 .placeorder:hover{
-    background-color: black;
-    color: #ffffff;
-    border-color: #ffffff;
-    border-width: 1px;
+  background-color: rgb(61, 61, 61);
+  color: white;
+  transition: all 0.3s;
 }
 .payment{
     color: #ffffff;
@@ -156,6 +161,8 @@ body{
     background-color: rgb(0, 0, 0);
     width: 600px;
     height: 720px;
+    animation: sub 1s forwards;
+
 }
 .seeshipping{
     color: #ffffff;
@@ -276,6 +283,30 @@ body{
   cursor: pointer;
   font-size: 30px;
 }
+
 .free{
   font-size: 25px;
+}
+
+@keyframes InputDivv {
+  0% {
+    opacity: 0;
+    transform: translateX(-7%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sub {
+  0% {
+    opacity: 0;
+    transform: translateX(15%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
 }

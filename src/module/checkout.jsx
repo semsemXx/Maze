@@ -58,6 +58,7 @@ export default function Checkout() {
       <Link to='/Cart' className={classes.icon}>
         <i className="fa-solid fa-cart-shopping"></i>
       </Link>
+    <div className={classes.InputDivv}>
       <p className={classes.delevery}>Delivery</p>
       <div className={classes.inputdiv}>
         <input
@@ -115,6 +116,7 @@ export default function Checkout() {
         <p className={classes.payment}>Payment on delivery</p>
         <p className={classes.seeshipping}>See shipping and payment policy.</p>
         <p className={classes.copyright}>All rights reserved by MATEHA STREETWEAR.</p>
+      </div>
       </div>
       <div className={classes.sub}>
         <div className={classes.productRow}>

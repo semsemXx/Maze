@@ -274,7 +274,7 @@ export default function MainPage() {
           <ul>
             <li > <button className={classes.Term}>Terms</button></li>
             <li > <button className={classes.Contact}>Contacts</button></li>
-            <li ><button className={classes.philosophy}>Our philosophy</button></li>
+            <li > <button className={classes.philosophy}>Our philosophy</button></li>
             <li ><Link to='/Login' className={classes.Account}>Accounts</Link></li>
           </ul>
           <div className={classes.CopyRight}>All rights are reserved Mateha Streetwear &copy;</div>

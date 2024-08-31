@@ -16,7 +16,7 @@
     list-style: none;
     justify-content: space-around;
     position: relative;
-    top: 20px;
+    top: 16px;
   }
   
   .navList li {
@@ -40,11 +40,18 @@
     top: 6px;
     left: 445px;
   }
-  .navLink:hover  , .LeftNavBut:hover{
+ .LeftNavBut:hover {
     color: #c9c9c6; 
     transform: scale(1.1); 
-    text-shadow: 0 4px 8px rgba(149, 147, 147, 0.3); 
+    text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
     transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  }
+  .navLink:hover 
+  {
+    color: #c9c9c6; 
+    padding-top: 20px; 
+    text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
+    transition: padding-top 0.3s ease, letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
   }
   .logoContainer {
     width: 120px; 
@@ -59,9 +66,13 @@
     font-family: 'maze';
     font-weight: 10;
   }
+  .bars
+  {
+    width: 90px;
+  }
   .bars i , .cart i 
   {
-    font-size: 31px;
+    font-size: 34px;
     cursor: pointer;
     color: white;
   }
@@ -84,7 +95,7 @@
   }
   .mazeLogo 
   {
-    width: 135px;
+    width: 122px;
     height: auto ; 
     cursor: pointer;
     position: relative;

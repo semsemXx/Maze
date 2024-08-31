@@ -77,4 +77,10 @@
 *
 {
     cursor: url("./cursor/CursorWQuestionMark.png") , auto;
+    
+}
+*::selection
+{
+  background-color: white;
+   color: #000;
 }

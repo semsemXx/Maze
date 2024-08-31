@@ -32,19 +32,19 @@ export default function SheetSide() {
           </video>
           <div className="space-y-5 mt-40 p-4">
             <SheetTitle className="text-white">
-              <button className={classes.LeftNavBut}>Men</button>
+              <button className={classes.LeftNavBut}>New Collection</button>
             </SheetTitle>
             <SheetTitle className="text-white">
-              <button className={classes.LeftNavBut}>Women</button>
+              <button className={classes.LeftNavBut}>Previous Collections</button>
             </SheetTitle>
             <SheetTitle className="text-white">
-              <button className={classes.LeftNavBut}>Accessories</button>
+              <button className={classes.LeftNavBut}>Our philosophy</button>
             </SheetTitle>
             <SheetTitle className="text-white">
-              <button className={classes.LeftNavBut}>Collabs</button>
+              <button className={classes.LeftNavBut}>Login</button>
             </SheetTitle>
             <SheetTitle className="text-white">
-              <button className={classes.LeftNavBut}>Whte</button>
+              <button className={classes.LeftNavBut}>Policies</button>
             </SheetTitle>
           </div>
           <SheetFooter className="flex flex-col items-center mb-4">

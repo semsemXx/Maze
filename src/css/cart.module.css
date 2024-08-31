@@ -13,6 +13,8 @@
   width: 250px;
   height: 30px;
   background-color: rgb(0, 0, 0);
+  animation: Continue 1.1s forwards;
+  transform-origin: center;
 }
 .cartTable {
   width: 55%;
@@ -23,6 +25,7 @@
   left: 93px;
   font-family: 'Maze';
   font-size: 20px;
+  animation: cartTable 1s forwards;
 }
 
 .cartTable th,
@@ -52,6 +55,8 @@
   width: 350px;
   left: 1050px;
   bottom: 115px;
+  animation: orderdiv 1s forwards;
+
   
 }
 .ordersum{
@@ -84,8 +89,39 @@
 }
 
 .checkoutButton:hover {
-  background-color: black;
-  color: white;
-  border-width: 1px ;
-  border-color: #ffffff;
+  background-color: rgb(61, 61, 61);
+    color: white;
+    transition: all 0.3s;
+}
+@keyframes Continue {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cartTable {
+  0% {
+    opacity: 0;
+    transform: translateX(-15%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes orderdiv {
+  0% {
+    opacity: 0;
+    transform: translateX(35%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

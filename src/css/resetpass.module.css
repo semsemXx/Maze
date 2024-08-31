@@ -1,0 +1,114 @@
+.resetdiv{
+    background-color: black;
+    height: 729px;
+}
+.resetpass{
+    position: relative;
+    top: 180px;
+    color: white;
+    font-family: 'Maze';
+    font-size: 55px;
+    text-align: center;
+}
+.please{
+    position: relative;
+    top: 210px;
+    color: white;
+    font-family: 'Maze';
+    font-size: 20px;
+    text-align: center;
+}
+.forgot{
+    position: relative;
+    top: 220px;
+    color: white;
+    font-family: 'Maze';
+    font-size: 17px;
+    text-align: center;
+}
+.send{
+    position: relative;
+    top: 280px;
+    color: white;
+    font-family: 'Maze';
+    font-size: 20px;
+    text-align: center;
+}
+.email{
+    background-color: black;
+    width: 700px;
+    height: 40px;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    top: 250px;
+    left: 425px;
+}
+.resetbtn{
+    font-size: 26px;
+    color: black;
+    background-color: white;
+    width: 250px;
+    height: 40px;
+    font-family: 'Maze';
+    cursor: pointer;
+    position: relative;
+    top: 330px;
+    left: 640px;
+}
+.resetbtn:hover{
+    background-color: rgb(61, 61, 61);
+    color: white;
+    transition: all 0.3s;
+}
+.resetdiv {
+    position: relative;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001;
+    height: 400px;
+    width: 600px;
+    border: 1px solid #ffffff;
+}
+
+.notification p {
+    text-align: center;
+    font-family: 'Maze';
+    font-size: 30px;
+    margin: 0;
+    padding-top: 100px;
+}
+.blur {
+    filter: blur(5px); 
+  }
+  .verificationIcon {
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    position: relative;
+    left: 245px;
+    top: 50px;
+  }
+  
+  .errorInput {
+    border-color: rgb(255, 255, 255) !important;
+    background-color: #ffffff; 
+    color: #000000; 
+  }
+  
+  .errorInput::placeholder {
+    color: #000000; 
+    opacity: 1; 
+  }
+  

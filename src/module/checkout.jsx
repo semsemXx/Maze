@@ -144,7 +144,7 @@ export default function Checkout() {
           </div>
           <div className={classes.summaryItem}>
             <p>Shipping</p>
-            <p>Free</p>
+            <p className={classes.free}>FREE</p>
           </div>
           <div className={classes.summaryItem}>
             <p>TOTAL</p>

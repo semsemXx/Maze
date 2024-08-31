@@ -1,9 +1,10 @@
 .cartdiv {
   background-color: black;
-  height: 729px;
   padding: 20px;
+  min-height: 729px; 
 }
-.continue{
+
+.continue {
   color: #ffffff;
   font-family: 'Maze';
   position: relative;
@@ -14,21 +15,22 @@
   height: 30px;
   background-color: rgb(0, 0, 0);
 }
+
 .cartTable {
   width: 55%;
-  height: 60%;
   border-collapse: collapse;
   position: relative;
   top: 200px;
   left: 93px;
   font-family: 'Maze';
   font-size: 20px;
+  min-height: 100px; 
 }
 
 .cartTable th,
 .cartTable td {
-  padding: 20px;
-  color: #ddd;
+  padding: 35px;
+  color: #ffffff;
 }
 
 .cartTable th {
@@ -36,39 +38,52 @@
   text-align: left;
   color: white;
   border-bottom: 3px solid #ffffff; 
+  position: sticky;
+  top: 0;
+  z-index: 1; 
 }
 
+
 .productImage {
-  width: 70px;
+  width: 40px;
   height: auto;
 }
-.removeButton{
+
+.removeButton {
   text-decoration: underline;
+  cursor: pointer;
+  color: #ffffff; 
+  border: none; 
+  background: none; 
+  padding: 0; 
 }
-.orderdiv{
+
+.orderdiv {
   position: fixed;
   background-color: rgb(0, 0, 0);
   height: 350px;
   width: 350px;
   left: 1050px;
   bottom: 115px;
-  
 }
-.ordersum{
+
+.ordersum {
   color: aliceblue;
   font-size: 45px;
   font-family: 'Maze';
 }
-.subtotal{
+
+.subtotal {
   color: white;
   font-size: 33px;
   font-family: 'Maze';
 }
-.shipcalc{
+
+.shipcalc {
   color: #ffffff;
   font-size: 10px;
-  
 }
+
 .checkoutButton {
   position: relative;
   top: 20px;
@@ -86,6 +101,7 @@
 .checkoutButton:hover {
   background-color: black;
   color: white;
-  border-width: 1px ;
+  border-width: 1px;
   border-color: #ffffff;
+  border-style: solid; 
 }

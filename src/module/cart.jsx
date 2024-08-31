@@ -31,7 +31,7 @@ export default function Cart() {
             <th>Product</th>
             <th>Name</th>
             <th>Size</th>
-            <th></th> 
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> 
             <th>Price</th>
           </tr>
         </thead>

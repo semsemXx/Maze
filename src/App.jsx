@@ -8,6 +8,7 @@ import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
 import Cart from '@/module/cart'
 import Checkout from '@/module/checkout';
+import Resetpass from "@/module/resetpass"
 
 export default function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/resetpass" element={<Resetpass />} />
         <Route
           path="/ProductPage1"
           element={<ProductPage 

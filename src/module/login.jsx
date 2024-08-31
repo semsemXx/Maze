@@ -61,6 +61,10 @@ export default function Login() {
     }
   };
 
+  const handleForgotPassword = () => {
+    navigate('/resetpass');
+  };
+
   return (
     <div className={classes.Login}>
       <div className={classes.topBar}>Free shipping for your first order!</div>
@@ -108,7 +112,9 @@ export default function Login() {
                 </button>
               </label>
             </div>
-            <p className={classes.forgot}>Forgot my password?</p>
+            <p className={classes.forgot} onClick={handleForgotPassword} style={{ cursor: 'pointer' }}>
+              Forgot my password?
+            </p>
           </div>
         ) : (
           <div className={classes.signupDetails}>

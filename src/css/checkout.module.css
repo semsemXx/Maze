@@ -283,7 +283,13 @@ body{
   cursor: pointer;
   font-size: 30px;
 }
-
+.icon i:hover 
+{
+  color: #c9c9c6; 
+  transform: scale(1.2); 
+  text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
+  transition: transform 0.3s ease, color 0.3s ease
+}
 .free{
   font-size: 25px;
 }

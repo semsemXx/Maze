@@ -18,17 +18,17 @@ export default function Resetpass() {
     setIsResetEmailSent(true);
     setTimeout(() => {
       setIsResetEmailSent(false);
-      navigate('/login'); 
+      navigate('/Login'); 
     }, 2500);
   };
 
   const isValidEmail = (email) => {
-    return /\S+@\S+\.\S+/.test(email); // Simple email validation regex
+    return /\S+@\S+\.\S+/.test(email); 
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    setIsEmailValid(true); // Reset validation status on input change
+    setIsEmailValid(true); 
   };
 
   const getObscuredEmail = (email) => {

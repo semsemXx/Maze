@@ -112,7 +112,7 @@ export default function Login() {
                 </button>
               </label>
             </div>
-            <p className={classes.forgot} onClick={handleForgotPassword} style={{ cursor: 'pointer' }}>
+            <p className={classes.forgot} onClick={handleForgotPassword}>
               Forgot my password?
             </p>
           </div>

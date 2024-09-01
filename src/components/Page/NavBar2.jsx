@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classes from '@/css/navBar2.module.css';
 import maze from '@/gif/gifWhiteLogo.gif';
 import SheetSide from '@/components/Page/Sheet';
@@ -25,32 +25,33 @@ export default function NavBar2() {
       window.removeEventListener('scroll', controlNavbar);
     };
   }, [lastScrollY]);
-
   return (
     <div>
-      <nav className={`${classes.navBar} ${visible ? classes.visible : classes.hidden}`}>
-        <ul className={classes.navList}>
-          <li>
-            <SheetSide />
-          </li>
-          <li>
-            <button className={classes.navButton}>
-              <Link to='/Main-Page'>
-                <img src={maze} alt="Maze" className={classes.mazeLogo} />
+        <nav className={`${classes.navBar} ${visible ? classes.visible : classes.hidden}`}>
+          <ul className={classes.navList}>
+            <li>
+              <SheetSide />
+            </li>
+            <li>
+              <button className={classes.navButton}>
+                <Link to='/Main-Page'>
+                  <img src={maze} alt="Maze" className={classes.mazeLogo} />
+                </Link>
+              </button>
+            </li>
+            <li>
+              <div className={classes.NavLinkDiv}>
+                <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
+              </div>
+            </li>
+            <li>
+              <Link to='/Cart' className={classes.cart}>
+                <i className="fa-solid fa-cart-shopping"></i>
               </Link>
-            </button>
-          </li>
-          <li>
-            <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
-          </li>
-          <li>
-            <Link to='/Cart' className={classes.cart}>
-              <i className="fa-solid fa-cart-shopping"></i>
-            </Link>
-          </li>
-        </ul>
-        <img src={lineNav} className={classes.lineNav} />
-      </nav>
+            </li>
+          </ul>
+          <img src={lineNav} className={classes.lineNav} />
+        </nav>
     </div>
   );
 }

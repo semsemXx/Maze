@@ -228,6 +228,8 @@
         position: relative; 
         bottom: 485px;
         z-index: 10;
+        flex-wrap: wrap;
+        gap: 30px 0;
     }
     .FooterDiv
     {
@@ -256,10 +258,11 @@
     footer ul li .Account:hover
     {
     color: #c9c9c6; 
-    padding-left: 5px; 
+    padding-left: 5px;
+    padding-right: 5px; 
     letter-spacing: 1px;
     text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
-    transition: padding-left 0.3s ease, letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
+    transition: padding-right 0.3s ease , padding-left 0.3s ease, letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
     }
     footer .CopyRight 
     {

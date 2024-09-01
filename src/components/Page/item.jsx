@@ -22,6 +22,7 @@ export default function ImageComponent(props) {
       MainControl.start("visible");
     }
   }, [loading, isInView]);
+  
   return (
     <motion.div ref={ref}
     variants={{

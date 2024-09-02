@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classes from '@/css/login.module.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 
 export default function Login() {
   const [isSignupActive, setIsSignupActive] = useState(false);
@@ -26,41 +27,72 @@ export default function Login() {
     setIsCheckboxChecked((prev) => !prev);
   };
 
-  const handleCreateAccount = () => {
+  const handleCreateAccount = async () => {
     const messages = {};
     if (!signupFirstName) messages.firstName = 'First name is required';
     if (!signupLastName) messages.lastName = 'Last name is required';
     if (!signupEmail || !/\S+@\S+\.\S+/.test(signupEmail)) messages.email = 'Valid email is required';
     if (!signupPassword || signupPassword.length < 6) messages.password = 'Password must be at least 6 characters';
     if (!signupPhone || !/^\d{8}$/.test(signupPhone)) messages.phone = 'Valid phone number is required';
-
+  
     setValidationMessages(messages);
-
+  
     if (Object.keys(messages).length === 0) {
-      setIsAccountCreated(true);
-      setTimeout(() => {
-        setIsAccountCreated(false);
-        toggleActive();
-      }, 2500);
+      try {
+        const response = await axios.post('http://localhost:5000/signup', { 
+          firstName: signupFirstName,
+          lastName: signupLastName,
+          email: signupEmail,
+          password: signupPassword,
+          phone: signupPhone
+        });
+  
+        if (response.status === 201) {
+          setIsAccountCreated(true);
+          setTimeout(() => {
+            setIsAccountCreated(false);
+            toggleActive();
+          }, 2500);
+        } else {
+          alert('Failed to create account. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error creating account:', error);
+        alert('An error occurred while creating the account. Please try again.');
+      }
     }
   };
-
-  const handleLogin = () => {
+  
+  const handleLogin = async () => {
     const messages = {};
     if (!loginEmail || !/\S+@\S+\.\S+/.test(loginEmail)) messages.loginEmail = 'Valid email is required';
     if (!loginPassword) messages.loginPassword = 'Password is required';
-
+  
     setValidationMessages(messages);
-
+  
     if (Object.keys(messages).length === 0) {
-      setIsLoginSuccessful(true);
-      setTimeout(() => {
-        setIsLoginSuccessful(false);
-        navigate('/Main-Page');
-      }, 2000);
+      try {
+        const response = await axios.post('http://localhost:5000/login', {  
+          email: loginEmail,
+          password: loginPassword,
+        });
+  
+        if (response.status === 200) {
+          setIsLoginSuccessful(true);
+          setTimeout(() => {
+            setIsLoginSuccessful(false);
+            navigate('/Main-Page');
+          }, 2000);
+        } else {
+          alert('Login failed. Please check your credentials.');
+        }
+      } catch (error) {
+        console.error('Error logging in:', error);
+        alert('There is no account with this info. Please try again.');
+      }
     }
   };
-
+  
   const handleForgotPassword = () => {
     navigate('/resetpass');
   };

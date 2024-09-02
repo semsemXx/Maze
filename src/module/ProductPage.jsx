@@ -1,23 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import classes from '@/css/productPage.module.css';
 import CadreProd from '@/image/cadre-.png';
 import Merch from '@/image/shirt.png';
 import Backdrop from './ReguPage/Backdrop';
 import ModalProductPage from './ReguPage/ModalProductPage';
 import ModalProductPageView from './ReguPage/ModalProductPageView';
+import { CartContext } from '@/context/CartContext'; 
 
 export default function ProductPage(props) {
   const [selectedSize, setSelectedSize] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
-  const ProdContainerRef = useRef(null);
-  const location = useLocation();
   const [isShown, setIsShown] = useState(false);
   const [isAppearing, setIsAppearing] = useState(false);
-
-
+  
+  const ProdContainerRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
   useEffect(() => {
-    
     if (location.state?.scrollToProdContainer && ProdContainerRef.current) {
       ProdContainerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -27,12 +28,21 @@ export default function ProductPage(props) {
     setSelectedSize(size);
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+  const handleAddToCart = () => {
+    if (selectedSize) {
+      const item = {
+        id: Math.random(),  
+        name: props.name,
+        size: selectedSize,
+        price: props.price,
+        image: Merch,  
+      };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
+      addToCart(item);  
+      navigate('/cart');  
+    } else {
+      alert('Please select a size.');
+    }
   };
 
   useEffect(() => {
@@ -42,6 +52,7 @@ export default function ProductPage(props) {
   useEffect(() => {
     props.onBackdropToggle(isAppearing);
   }, [isAppearing]);
+
   return (
     <div className={classes.ProdContainer} ref={ProdContainerRef}>
       <div className={classes.PicturesSide}>
@@ -66,20 +77,16 @@ export default function ProductPage(props) {
           </div>
           <div className={classes.meaning}>
             <p className={classes.prodname}>{props.name} Meaning</p>
-            <button  onClick={()=> {
-              setIsAppearing(true);
-            }}>View</button>
-            {isAppearing && <Backdrop/>}
+            <button onClick={() => setIsAppearing(true)}>View</button>
+            {isAppearing && <Backdrop />}
             {isAppearing && <ModalProductPageView setIsAppearing={setIsAppearing} content={props.content} />}
           </div>
           <div className={classes.Color}>
             <p>COLOR :</p>
             <button className={classes.black1}></button>
             <button className={classes.black2}></button>
-            <button className={classes.interogation}  onClick={()=> {
-              setIsShown(true);
-            }}>(?)</button>
-            {isShown && <Backdrop/>}
+            <button className={classes.interogation} onClick={() => setIsShown(true)}>(?)</button>
+            {isShown && <Backdrop />}
             {isShown && <ModalProductPage setIsShown={setIsShown} />}
           </div>
           <div className={classes.size}>
@@ -100,8 +107,9 @@ export default function ProductPage(props) {
             ) : (
               <button 
                 className={classes.addToCart} 
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave}
+                onMouseEnter={() => setIsHovered(true)} 
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={handleAddToCart}
               >
                 ADD TO CART
               </button>

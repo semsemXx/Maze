@@ -157,7 +157,7 @@ body{
 .sub{
     position: relative;
     left: 900px;
-    bottom: 310px;
+    bottom: 125px;
     background-color: rgb(0, 0, 0);
     width: 600px;
     height: 720px;
@@ -186,11 +186,11 @@ body{
 .productRow {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    
+    padding: 25px;
     position: relative;
     top: 170px;
-    font-family: 'Maze';
+    
   }
   
   .productBox {
@@ -199,6 +199,9 @@ body{
     background-color: #1b1a1a;
     padding: 10px;
     border-radius: 5px;
+    font-family: 'Maze';
+    margin-bottom: 5px; 
+    
   }
   
   .productImage {
@@ -239,8 +242,8 @@ body{
     background-color: #000000;
     border-top: 1px solid #000000;
     position: relative;
-    top: 170px;
     font-family: 'Maze';
+    bottom: 20px;
   }
   
   .summaryItem {
@@ -248,7 +251,7 @@ body{
     justify-content: space-between;
     color: #ffffff;
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
   }
   
   .summaryItem p {

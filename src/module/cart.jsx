@@ -1,19 +1,22 @@
 import React, { useContext } from 'react';
 import classes from '@/css/cart.module.css';
 import { useNavigate } from 'react-router-dom';
-import shirt from '@/image/shirt.png';
 import { CartContext } from '@/context/CartContext';
 
 export default function Cart() {
   const { cartItems, removeFromCart } = useContext(CartContext);
   const navigate = useNavigate();
+
   const handleRemove = (id) => {
     removeFromCart(id);
   };
 
+  const subtotal = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
 
   const handleCheckout = () => {
-    navigate('/Checkout');
+    if (cartItems.length > 0 && subtotal > 0) {
+      navigate('/Checkout', { state: { cartItems, subtotal } });
+    }
   };
 
   return (
@@ -25,7 +28,7 @@ export default function Cart() {
             <th>Product</th>
             <th>Name</th>
             <th>Size</th>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> 
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
             <th>Price</th>
           </tr>
         </thead>
@@ -62,11 +65,17 @@ export default function Cart() {
         <p className={classes.ordersum}>ORDER SUMMARY</p>
         <br />
         <p className={classes.subtotal}>
-          Subtotal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-          {cartItems.reduce((total, item) => total + parseFloat(item.price), 0)} DT
+          Subtotal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {subtotal} DT
         </p>
         <p className={classes.shipcalc}>Shipping is calculated on checkout</p>
-        <button onClick={handleCheckout} className={classes.checkoutButton}>Checkout</button>
+        <button 
+          onClick={handleCheckout} 
+          className={classes.checkoutButton}
+          disabled={cartItems.length === 0 || subtotal === 0}
+        >
+          Checkout
+        </button>
       </div>
     </div>
   );

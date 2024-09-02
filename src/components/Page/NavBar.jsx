@@ -41,7 +41,9 @@ export default function NavBar() {
             </button>
           </li>
           <li>
+            <div className={classes.NavLinkDiv}>
             <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
+            </div>
           </li>
           <li>
             <Link to='/Cart' className={classes.cart}>

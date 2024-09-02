@@ -6,9 +6,11 @@ import Login from './module/login';
 import NavBar from './components/Page/NavBar';
 import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
+import SoldOutProductPage from '@/module/soldOutProductPage';
 import Cart from '@/module/cart'
 import Checkout from '@/module/checkout';
 import Resetpass from "@/module/resetpass"
+import PreviousCollections from './module/previousCollections';
 
 export default function App() {
   const location = useLocation();
@@ -31,22 +33,31 @@ export default function App() {
         <Route path="/resetpass" element={<Resetpass />} />
         <Route
           path="/ProductPage1"
-          element={<ProductPage 
-            name="mateha" 
-            price={20} 
+          element={<SoldOutProductPage 
+            name="MATEHA1" 
             onBackdropToggle={handleBackdropToggle} 
-            content="Delve into the depths of perception with a thought-provoking mantra delicately inscribed on its high quality fabric. Embodying the enigma of existence, this tee beckons contemplation, reminding us of the paradox within our sight. Adorned with a concealed guardian (a 3D eye on the back) it whispers of hidden safeguards against life's lurking uncertainties. Adorn yourself with this embodiment of profound mystery, where fashion and philosophy converge."
+            content="Delic"
           />}
         />
         <Route
           path="/ProductPage2"
           element={<ProductPage 
-            name="zeb123" 
-            price={0.500} 
+            name="MATEHA2" 
+            price={40} 
+            onBackdropToggle={handleBackdropToggle} 
+            content="Delve into the depths of perception with a thought-provoking mantra delicately inscribed on its high quality fabric. Embodying the enigma of existence, this tee beckons contemplation, reminding us of the paradox within our sight. Adorned with a concealed guardian (a 3D eye on the back) it whispers of hidden safeguards against life's lurking uncertainties. Adorn yourself with this embodiment of profound mystery, where fashion and philosophy converge."
+          />}
+        />
+        <Route
+          path="/ProductPage3"
+          element={<ProductPage 
+            name="MATEHA3" 
+            price={60} 
             onBackdropToggle={handleBackdropToggle} 
             content="Delic"
           />}
         />
+        <Route path="/Previous-Collections" element={<PreviousCollections />} />
       </Routes>
     </div>
   );

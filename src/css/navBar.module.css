@@ -8,7 +8,6 @@
     position: fixed;
     transition: transform 0.4s ease-in-out;
     z-index: 50;
-
   }
 
   .navList {
@@ -20,7 +19,7 @@
   }
   
   .navList li {
-    margin: 0 100px; 
+    margin: 0 90px; 
     margin-top: 7px;
   }
   
@@ -38,20 +37,29 @@
     font-size: 28px;
     position: relative;
     top: 6px;
-    left: 445px;
+    left: 460px;
+  }
+  .LeftNavBut
+  {
+    cursor: pointer;
   }
  .LeftNavBut:hover {
-    color: #c9c9c6; 
-    transform: scale(1.1); 
-    text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  color: #c9c9c6; 
+  letter-spacing: 3px;
+  text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
+  transition: letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
+  }
+  .NavLinkDiv
+  {
+    width: 120px;
   }
   .navLink:hover 
   {
     color: #c9c9c6; 
-    padding-top: 20px; 
+    width: 100px; 
+    letter-spacing: 1px;
     text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
-    transition: padding-top 0.3s ease, letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
+    transition: letter-spacing 0.3s ease  ,color 0.3s ease, text-shadow 0.3s ease;
   }
   .logoContainer {
     width: 120px; 
@@ -69,6 +77,8 @@
   .bars
   {
     width: 90px;
+    position: relative;
+    right: 8px;
   }
   .bars i , .cart i 
   {
@@ -99,7 +109,7 @@
     height: auto ; 
     cursor: pointer;
     position: relative;
-    left: 90px;
+    left: 105px;
     bottom: 10px;
   }
   .lineNav {

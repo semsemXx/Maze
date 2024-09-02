@@ -23,7 +23,11 @@ export default function Resetpass() {
   };
 
   const isValidEmail = (email) => {
+
     return /\S+@\S+\.\S+/.test(email);
+
+
+
   };
 
   const handleEmailChange = (e) => {

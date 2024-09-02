@@ -170,8 +170,16 @@
     position: relative;
     bottom: 70px;
     left: 113px;
-    font-size: 19px;
-
+    font-size: 21px;
+    cursor: pointer;
+}
+.forgot:hover 
+{
+    color: #c9c9c6; 
+    transform: scale(1.1);
+    letter-spacing: 0.5px;
+    text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
+    transition: transform  0.3s ease ,padding-right 0.3s ease , padding-left 0.3s ease, letter-spacing  0.3s ease ,color 0.3s ease, text-shadow 0.3s ease;
 }
 .remember{
     font-family: 'Maze';

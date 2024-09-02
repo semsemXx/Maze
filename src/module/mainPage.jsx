@@ -16,6 +16,7 @@ import MoreStar1 from '@/image/little-star-1.png';
 import MoreStar2 from '@/image/little-star-2.png';
 import maze from '@/gif/gifWhiteLogo.gif';
 import { Link } from 'react-router-dom';
+import ImageComponentSoldout from "@/components/Page/itemSoldOut";
 
 
 
@@ -253,9 +254,9 @@ export default function MainPage() {
             transition={{ duration: 0.5, delay: 0.10 }}
             ><img src={CircleDeco} className={classes.CircleDeco} alt="Circle Decoration" /></motion.div>
           <div className={classes.ProdContainer}>
-            <ImageComponent name="Mateha1" price={40} path="/ProductPage1" loading={loading} />
-            <ImageComponent name="Zeb123" price={0.500} path="/ProductPage2" loading={loading} />
-            <ImageComponent name="Mateha3" price={70} path="/ProductPage3" loading={loading} />
+            <ImageComponentSoldout name="Mateha1" path="/ProductPage1" loading={loading} />
+            <ImageComponent name="Mateha2" price={40} path="/ProductPage2" loading={loading} />
+            <ImageComponent name="Mateha3" price={60} path="/ProductPage3" loading={loading} />
             <ImageComponent name="Mateha4" price={50} path="/ProductPage4" loading={loading} />
           </div>
           <img src={DownStar} className={classes.DownStar} alt="Down Star" />
@@ -272,10 +273,10 @@ export default function MainPage() {
             className={classes.FooterDiv}
             ><footer>
           <ul>
-            <li > <button className={classes.Term}>Terms</button></li>
-            <li > <button className={classes.Contact}>Contacts</button></li>
-            <li > <button className={classes.philosophy}>Our philosophy</button></li>
-            <li ><Link to='/Login' className={classes.Account}>Accounts</Link></li>
+            <li > <Link to='/Terms' className={classes.Term}>Terms</Link></li>
+            <li > <Link to='/Contacts' className={classes.Contact}>Contacts</Link></li>
+            <li > <Link to='/Our-philosophy' className={classes.philosophy}>Our philosophy</Link></li>
+            <li > <Link to='/Login' className={classes.Account}>Accounts</Link></li>
           </ul>
           <div className={classes.CopyRight}>All rights are reserved Mateha Streetwear &copy;</div>
         </footer>

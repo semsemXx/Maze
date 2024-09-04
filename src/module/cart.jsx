@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import classes from '@/css/cart.module.css';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '@/context/CartContext';
+import { UserContext } from '@/context/UserContext';
 
 export default function Cart() {
   const { cartItems, removeFromCart } = useContext(CartContext);
@@ -19,6 +20,8 @@ export default function Cart() {
     }
   };
 
+  const { user } = useContext(UserContext);
+
   return (
     <div className={classes.cartdiv}>
       <p className={classes.continue}>Continue Shopping</p>
@@ -32,33 +35,39 @@ export default function Cart() {
             <th>Price</th>
           </tr>
         </thead>
-        {cartItems.length > 0 ? (
-          <tbody>
-            {cartItems.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <img src={item.image} alt={item.name} className={classes.productImage} />
+        <tbody>
+          {user ? (
+            cartItems.length > 0 ? (
+              cartItems.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <img src={item.image} alt={item.name} className={classes.productImage} />
+                  </td>
+                  <td>{item.name}</td>
+                  <td>{item.size}</td>
+                  <td>
+                    <button onClick={() => handleRemove(item.id)} className={classes.removeButton}>
+                      Remove
+                    </button>
+                  </td>
+                  <td>{item.price}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" className={classes.emptyMessage}>
+                  Your cart is empty.
                 </td>
-                <td>{item.name}</td>
-                <td>{item.size}</td>
-                <td>
-                  <button onClick={() => handleRemove(item.id)} className={classes.removeButton}>
-                    Remove
-                  </button>
-                </td>
-                <td>{item.price}</td>
               </tr>
-            ))}
-          </tbody>
-        ) : (
-          <tbody>
+            )
+          ) : (
             <tr>
-              <td colSpan="5" className={classes.emptyMessage}>
-                Your cart is empty.
+              <td colSpan="8" className={classes.emptyMessage}>
+              You're currently logged out. Your cart will be here when you return.
               </td>
             </tr>
-          </tbody>
-        )}
+          )}
+        </tbody>
       </table>
 
       <div className={classes.orderdiv}>

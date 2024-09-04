@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Opening from '@/module/opening';
 import MainPage from '@/module/mainPage';
@@ -7,10 +7,11 @@ import NavBar from './components/Page/NavBar';
 import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
 import SoldOutProductPage from '@/module/soldOutProductPage';
-import Cart from '@/module/cart'
+import Cart from '@/module/cart';
 import Checkout from '@/module/checkout';
-import Resetpass from "@/module/resetpass"
+import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
+import { UserProvider } from '@/context/UserContext';
 
 export default function App() {
   const location = useLocation();
@@ -20,10 +21,22 @@ export default function App() {
     setIsBackdropShown(isShown);
   };
 
+  useEffect(() => {
+    if (location.pathname === '/Previous-Collections' || location.pathname === '/Main-Page') {
+      document.body.style.overflowX = 'hidden';
+    } else {
+      document.body.style.overflowX = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflowX  = 'auto'; 
+    };
+  }, [location.pathname]);
+
   return (
-    <div>
-      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && location.pathname !=='/Checkout'&&<NavBar />}
-      {location.pathname == '/Login'  &&  <NavBar2 />}
+    <UserProvider>
+      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && location.pathname !== '/Checkout' && <NavBar />}
+      {location.pathname === '/Login' && <NavBar2 />}
       <Routes>
         <Route path="/" element={<Opening />} />
         <Route path="/Main-Page" element={<MainPage />} />
@@ -33,32 +46,32 @@ export default function App() {
         <Route path="/resetpass" element={<Resetpass />} />
         <Route
           path="/ProductPage1"
-          element={<SoldOutProductPage 
-            name="MATEHA1" 
-            onBackdropToggle={handleBackdropToggle} 
+          element={<SoldOutProductPage
+            name="MATEHA1"
+            onBackdropToggle={handleBackdropToggle}
             content="Delic"
           />}
         />
         <Route
           path="/ProductPage2"
-          element={<ProductPage 
-            name="MATEHA2" 
-            price={40} 
-            onBackdropToggle={handleBackdropToggle} 
+          element={<ProductPage
+            name="MATEHA2"
+            price={40}
+            onBackdropToggle={handleBackdropToggle}
             content="Delve into the depths of perception with a thought-provoking mantra delicately inscribed on its high quality fabric. Embodying the enigma of existence, this tee beckons contemplation, reminding us of the paradox within our sight. Adorned with a concealed guardian (a 3D eye on the back) it whispers of hidden safeguards against life's lurking uncertainties. Adorn yourself with this embodiment of profound mystery, where fashion and philosophy converge."
           />}
         />
         <Route
           path="/ProductPage3"
-          element={<ProductPage 
-            name="MATEHA3" 
-            price={60} 
-            onBackdropToggle={handleBackdropToggle} 
+          element={<ProductPage
+            name="MATEHA3"
+            price={60}
+            onBackdropToggle={handleBackdropToggle}
             content="Delic"
           />}
         />
         <Route path="/Previous-Collections" element={<PreviousCollections />} />
       </Routes>
-    </div>
+    </UserProvider>
   );
 }

@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import classes from '@/css/productPage.module.css';
 import CadreProd from '@/image/cadre-.png';
-import Merch from '@/image/shirt.png';
 import Backdrop from './ReguPage/Backdrop';
 import ModalProductPage from './ReguPage/ModalProductPage';
 import ModalProductPageView from './ReguPage/ModalProductPageView';
-import { CartContext } from '@/context/CartContext'; 
+import { UserContext } from '@/context/UserContext';
+import axios from 'axios';
+import Merch from '@/image/shirt.png'
 
 export default function ProductPage(props) {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -17,7 +18,8 @@ export default function ProductPage(props) {
   const ProdContainerRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const { addToCart } = useContext(CartContext);
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
     if (location.state?.scrollToProdContainer && ProdContainerRef.current) {
       ProdContainerRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -28,30 +30,29 @@ export default function ProductPage(props) {
     setSelectedSize(size);
   };
 
-  const handleAddToCart = () => {
-    if (selectedSize) {
-      const item = {
-        id: Math.random(),  
+  const handleAddToCart = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/cart/add', {
+        userId: user._id,
         name: props.name,
         size: selectedSize,
         price: props.price,
-        image: Merch,  
-      };
-
-      addToCart(item);  
-      navigate('/cart');  
-    } else {
-      alert('Please select a size.');
+        image : {Merch} //Lezmek thot url kemel apparm , tnajamch thot hakeka juste {Merch} khater hathika synonyme l src/image/blahblahblah mahouch el url kemel
+      });
+      if (response.status === 201) {
+        navigate('/cart');
+      } else {
+        alert('Failed to add item to cart');
+      }
+    } catch (error) {
+      console.error('Error occurred while adding item to cart:', error);
+      alert('An error occurred while adding the item to the cart');
     }
   };
-
+  
   useEffect(() => {
-    props.onBackdropToggle(isShown);
-  }, [isShown]);
-
-  useEffect(() => {
-    props.onBackdropToggle(isAppearing);
-  }, [isAppearing]);
+    props.onBackdropToggle(isShown || isAppearing);
+  }, [isShown, isAppearing]);
 
   return (
     <div className={classes.ProdContainer} ref={ProdContainerRef}>
@@ -104,7 +105,7 @@ export default function ProductPage(props) {
           <div className={`${classes.Select} ${isHovered ? classes.hovered : ''}`}>
             {!selectedSize ? (
               <p>SELECT A SIZE</p>
-            ) : (
+            ) : (user ? (
               <button 
                 className={classes.addToCart} 
                 onMouseEnter={() => setIsHovered(true)} 
@@ -113,7 +114,16 @@ export default function ProductPage(props) {
               >
                 ADD TO CART
               </button>
-            )}
+            ) : (
+              <button 
+                className={classes.LoginFirst}
+                onMouseEnter={() => setIsHovered(true)} 
+                onMouseLeave={() => setIsHovered(false)}
+                onClick={() => navigate('/Login', { state: { from: location } })}
+              >
+                LOGIN FIRST
+              </button>
+            ))}
           </div>
           <div className={classes.lineBetween}></div>
         </div>

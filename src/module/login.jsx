@@ -3,6 +3,8 @@ import classes from '@/css/login.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '@/context/UserContext'; 
+import { useLocation } from 'react-router-dom';
+
 
 export default function Login() {
   const { login } = useContext(UserContext); 
@@ -19,6 +21,7 @@ export default function Login() {
   const [signupPhone, setSignupPhone] = useState('');
   const [validationMessages, setValidationMessages] = useState({});
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   const toggleActive = () => {
@@ -87,7 +90,8 @@ export default function Login() {
           setIsLoginSuccessful(true);
           setTimeout(() => {
             setIsLoginSuccessful(false);
-            navigate('/Main-Page');
+            const redirectTo = location.state?.from?.pathname || '/Main-Page';
+            navigate(redirectTo);            
           }, 2000);
         } else {
           alert('Login failed. Please check your credentials.');

@@ -7,6 +7,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -33,6 +34,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   phone: { type: String, required: true }
 });
+
 
 const User = mongoose.model('User', userSchema);
 
@@ -63,6 +65,45 @@ app.post('/login', async (req, res) => {
   }
 });
 
+const cartSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  name: { type: String, required: true },
+  size: { type: String, required: true },
+  price: { type: Number, required: true },
+  image: { type: String, required: true },
+});
+
+const Cart = mongoose.model('Cart', cartSchema);
+
+app.post('/cart/add', async (req, res) => {
+  const { userId, name, size, price, image } = req.body;
+  console.log('Request received:', { userId, name, size, price, image });
+  try {
+    const newItem = new Cart({ userId, name, size, price, image });
+    await newItem.save();
+    res.status(201).json({ message: 'Item added to cart successfully', item: newItem });
+  } catch (error) {
+    console.error('Error adding item to cart:', error);
+    res.status(500).json({ message: 'Failed to add item to cart', error });
+  }
+});
+
+
+app.get('/cart/:userId', async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const cartItems = await Cart.find({ userId });
+    res.status(200).json(cartItems);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch cart items', error });
+  }
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+

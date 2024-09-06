@@ -5,7 +5,7 @@ import axios from 'axios';
 import { UserContext } from '@/context/UserContext'; 
 
 export default function Login() {
-  const { login } = useContext(UserContext); 
+  const { login } = useContext(UserContext);
   const [isSignupActive, setIsSignupActive] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [isAccountCreated, setIsAccountCreated] = useState(false);
@@ -36,9 +36,9 @@ export default function Login() {
     if (!signupEmail || !/\S+@\S+\.\S+/.test(signupEmail)) messages.email = 'Valid email is required';
     if (!signupPassword || signupPassword.length < 6) messages.password = 'Password must be at least 6 characters';
     if (!signupPhone || !/^\d{8}$/.test(signupPhone)) messages.phone = 'Valid phone number is required';
-  
+
     setValidationMessages(messages);
-  
+
     if (Object.keys(messages).length === 0) {
       try {
         const response = await axios.post('http://localhost:5000/signup', { 
@@ -48,7 +48,7 @@ export default function Login() {
           password: signupPassword,
           phone: signupPhone
         });
-  
+
         if (response.status === 201) {
           setIsAccountCreated(true);
           setTimeout(() => {
@@ -82,7 +82,7 @@ export default function Login() {
         if (response.status === 200) {
           const userData = response.data; 
 
-          login(userData); 
+          login(userData, isCheckboxChecked);
 
           setIsLoginSuccessful(true);
           setTimeout(() => {

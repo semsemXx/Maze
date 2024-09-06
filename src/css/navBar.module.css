@@ -59,7 +59,24 @@
     width: 100px; 
     letter-spacing: 1px;
     text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
-    transition: letter-spacing 0.3s ease  ,color 0.3s ease, text-shadow 0.3s ease;
+    transition: width 0.3s ease, letter-spacing 0.3s ease  ,color 0.3s ease, text-shadow 0.3s ease;
+  }
+  .navlogout{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'maze';
+    font-size: 28px;
+    position: relative;
+    top: 6px;
+    left: 480px;
+  }
+  .navlogout:hover 
+  {
+    color: #c9c9c6; 
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
+    transition:  letter-spacing 0.3s ease  ,color 0.3s ease, text-shadow 0.3s ease;
   }
   .logoContainer {
     width: 120px; 

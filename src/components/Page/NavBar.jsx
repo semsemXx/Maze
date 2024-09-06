@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import classes from '@/css/navBar.module.css';
 import maze from '@/gif/gifWhiteLogo.gif';
 import SheetSide from '@/components/Page/Sheet';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import lineNav from "@/image/lineNav.png";
+import { UserContext } from '@/context/UserContext'; 
 
 export default function NavBar() {
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { user, logout } = useContext(UserContext); 
+  const navigate = useNavigate();
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {
@@ -26,6 +29,11 @@ export default function NavBar() {
     };
   }, [lastScrollY]);
 
+  const handleLogout = () => {
+    logout(); 
+    navigate('/Login'); 
+  };
+
   return (
     <div>
       <nav className={`${classes.navBar} ${visible ? classes.visible : classes.hidden}`}>
@@ -42,7 +50,13 @@ export default function NavBar() {
           </li>
           <li>
             <div className={classes.NavLinkDiv}>
-            <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
+              {user ? (
+                <button onClick={handleLogout} className={classes.navlogout}>
+                  LOGOUT
+                </button>
+              ) : (
+                <Link to='/Login' className={classes.navLink}>ACCOUNTS</Link>
+              )}
             </div>
           </li>
           <li>

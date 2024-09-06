@@ -1,0 +1,24 @@
+.confirmdiv{
+    background-color: black;
+    height: 729px;
+}
+.order{
+    position: relative;
+    top: 280px;
+    text-align: center;
+    color: white;
+    font-family: 'Maze';
+    font-size: 45px;
+}
+.soon{
+    font-size: 35px;
+    top: 0px;
+    
+}
+.maze{
+    height: 600px;
+    width: 1300px;
+    left: 70px;
+    bottom: 70px;
+    position: relative;
+}

@@ -278,7 +278,7 @@ export default function MainPage() {
             <li > <Link to='/Our-philosophy' className={classes.philosophy}>Our philosophy</Link></li>
             <li > <Link to='/Login' className={classes.Account}>Accounts</Link></li>
           </ul>
-          <div className={classes.CopyRight}>All rights are reserved Mateha Streetwear &copy;</div>
+          <div className={classes.CopyRight}>All rights are reserved Mateha Streetwear. &copy;</div>
         </footer>
         </motion.div>
       </div>

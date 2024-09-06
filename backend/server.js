@@ -16,6 +16,7 @@ app.use(helmet());
 const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
+const { v4: uuidv4 } = require('uuid');
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -66,7 +67,7 @@ app.post('/login', async (req, res) => {
 });
 
 const cartSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  userId: { type: String, required: true },
   name: { type: String, required: true },
   size: { type: String, required: true },
   price: { type: Number, required: true },
@@ -84,9 +85,10 @@ app.post('/cart/add', async (req, res) => {
     res.status(201).json({ message: 'Item added to cart successfully', item: newItem });
   } catch (error) {
     console.error('Error adding item to cart:', error);
-    res.status(500).json({ message: 'Failed to add item to cart', error });
+    res.status(500).json({ message: 'Failed to add item to cart', error: error.message });
   }
 });
+
 
 
 app.get('/cart/:userId', async (req, res) => {

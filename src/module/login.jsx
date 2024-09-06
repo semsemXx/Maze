@@ -1,13 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import classes from '@/css/login.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '@/context/UserContext'; 
-import { useLocation } from 'react-router-dom';
-
 
 export default function Login() {
-  const { login } = useContext(UserContext); 
   const [isSignupActive, setIsSignupActive] = useState(false);
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const [isAccountCreated, setIsAccountCreated] = useState(false);
@@ -23,7 +20,7 @@ export default function Login() {
 
   const location = useLocation();
   const navigate = useNavigate();
-
+  
   const toggleActive = () => {
     setIsSignupActive((prev) => !prev);
   };
@@ -67,26 +64,22 @@ export default function Login() {
       }
     }
   };
-
+  
   const handleLogin = async () => {
     const messages = {};
     if (!loginEmail || !/\S+@\S+\.\S+/.test(loginEmail)) messages.loginEmail = 'Valid email is required';
     if (!loginPassword) messages.loginPassword = 'Password is required';
-
+  
     setValidationMessages(messages);
-
+  
     if (Object.keys(messages).length === 0) {
       try {
         const response = await axios.post('http://localhost:5000/login', {  
           email: loginEmail,
           password: loginPassword,
         });
-
+  
         if (response.status === 200) {
-          const userData = response.data; 
-
-          login(userData); 
-
           setIsLoginSuccessful(true);
           setTimeout(() => {
             setIsLoginSuccessful(false);
@@ -102,7 +95,7 @@ export default function Login() {
       }
     }
   };
-
+  
   const handleForgotPassword = () => {
     navigate('/resetpass');
   };

@@ -223,9 +223,9 @@ export default function MainPage() {
         </motion.div>
 
         <p>The brand that has no idea about the world we live in (?)</p>
-         
-        <Rebone scrollPosition={scrollPosition}/>
 
+        <Rebone scrollPosition={scrollPosition}/>
+          
         <div className={classes.ToLower}>
           <img src={MoreStar1} className={classes.MoreStar1}/>
           <img src={MoreStar2} className={classes.MoreStar2}/>

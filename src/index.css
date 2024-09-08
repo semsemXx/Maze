@@ -76,11 +76,10 @@
 }
 *
 {
-    cursor: url("./cursor/CursorWQuestionMark.png") , auto;
-    
+    cursor: url("./cursor/CursorWQuestionMark.png") , auto;    
 }
 *::selection
 {
-  background-color: white;
-   color: #000;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
 }

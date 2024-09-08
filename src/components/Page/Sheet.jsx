@@ -54,7 +54,7 @@ export default function SheetSide() {
             <SheetTitle className="text-white">
               <button
                 className={classes.LeftNavBut}
-                onClick={() => handleNavigation('/New-Collection')}
+                onClick={() => handleNavigation('/Main-Page')}
               >
                 New Collection
               </button>

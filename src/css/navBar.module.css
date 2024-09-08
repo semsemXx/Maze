@@ -8,8 +8,7 @@
     position: fixed;
     transition: transform 0.4s ease-in-out;
     z-index: 50;
-  }
-
+  } 
   .navList {
     display: flex;
     list-style: none;
@@ -28,7 +27,17 @@
     border: none;
     padding: 0;
   }
-  
+  .logoutButton
+  {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'maze';
+    font-size: 28px;
+    position: relative;
+    top: 6px;
+    left: 480px;
+  }
   .navLink {
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -43,7 +52,7 @@
   {
     cursor: pointer;
   }
- .LeftNavBut:hover {
+ .LeftNavBut:hover , .logoutButton:hover  {
   color: #c9c9c6; 
   letter-spacing: 3px;
   text-shadow: 0 4px 8px rgba(188, 187, 187, 0.3); 
@@ -152,3 +161,27 @@
   .navBar.visible {
     transform: translateY(0);
   }
+
+.notificationn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  height: 300px;
+  width: 600px;
+  border-width: 1px;
+  border-color: #ffffff;
+  z-index: 1000000;
+}
+
+.notificationn p {
+  text-align: center;
+  font-family: 'Maze';
+  font-size: 50px;
+  position: relative;
+  top: 85px;
+}

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 import classes from '@/css/checkout.module.css';
 import { useNavigate } from 'react-router-dom';
 import shirt from '@/image/shirt.png';
@@ -18,7 +20,7 @@ export default function Checkout() {
 
   const navigate = useNavigate();
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     const messages = {};
     const nameRegex = /^[a-zA-Z\s]*$/; 
     const postalCodeRegex = /^\d{4,6}$/; 
@@ -46,8 +48,27 @@ export default function Checkout() {
     setValidationMessages(messages);
 
     if (Object.keys(messages).length === 0) {
-      alert('Order placed successfully!');
-      navigate('/confirmation');
+      try {
+        const response = await axios.post('http://localhost:5000/checkout', {
+          userId: 'userId',
+          items: cartItems,
+          deliveryDetails: {
+            firstName,
+            lastName,
+            address,
+            apartment,
+            city,
+            postalCode,
+            phoneNumber
+          },
+          subtotal
+        });
+        console.log('Order response:', response.data);
+        navigate('/confirmation');
+      } catch (error) {
+        console.error('Error placing order:', error.response ? error.response.data : error.message);
+        alert('Failed to place the order. Check the console for more details.');
+      }
     }
   };
 

@@ -29,6 +29,36 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+const commandSchema = new mongoose.Schema({
+  userId: String,
+  items: Array,
+  deliveryDetails: {
+    firstName: String,
+    lastName: String,
+    address: String,
+    apartment: String,
+    city: String,
+    postalCode: String,
+    phoneNumber: String
+  },
+  subtotal: Number,
+});
+
+const Command = mongoose.model('Command', commandSchema);
+
+app.post('/checkout', async (req, res) => {
+  const { userId, items, deliveryDetails, subtotal } = req.body;
+  try {
+    const newCommand = new Command({ userId, items, deliveryDetails, subtotal });
+    await newCommand.save();
+    res.status(201).json({ message: 'Order placed successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to place the order', error });
+  }
+});
+
+
+
 app.post('/signup', async (req, res) => {
   const { firstName, lastName, email, password, phone } = req.body;
   try {

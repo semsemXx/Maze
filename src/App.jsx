@@ -11,6 +11,7 @@ import Cart from '@/module/cart';
 import Checkout from '@/module/checkout';
 import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
+import Confirmation from './module/ReguPage/Confirmation';
 import { UserProvider } from '@/context/UserContext';
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/resetpass" element={<Resetpass />} />
+        <Route path="/confirmation" element={<Confirmation />} />
         <Route
           path="/ProductPage1"
           element={<SoldOutProductPage

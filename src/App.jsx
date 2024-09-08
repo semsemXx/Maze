@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Opening from '@/module/opening';
 import MainPage from '@/module/mainPage';
@@ -7,9 +7,9 @@ import NavBar from './components/Page/NavBar';
 import NavBar2 from './components/Page/NavBar2';
 import ProductPage from './module/ProductPage';
 import SoldOutProductPage from '@/module/soldOutProductPage';
-import Cart from '@/module/cart'
+import Cart from '@/module/cart';
 import Checkout from '@/module/checkout';
-import Resetpass from "@/module/resetpass"
+import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
 import Confirmation from './module/ReguPage/Confirmation';
 
@@ -21,10 +21,18 @@ export default function App() {
     setIsBackdropShown(isShown);
   };
 
+  useEffect(() => {
+    if (location.pathname === '/Previous-Collections' || location.pathname === '/Main-Page' ) {
+      document.body.style.overflowX = 'hidden';
+    } else {
+      document.body.style.overflowX = 'auto';
+    }
+  }, [location.pathname]);
+
   return (
     <div>
-      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && location.pathname !=='/Checkout'&&<NavBar />}
-      {location.pathname == '/Login'  &&  <NavBar2 />}
+      {location.pathname !== '/' && !isBackdropShown && location.pathname !== '/Login' && location.pathname !=='/Checkout' && <NavBar />}
+      {location.pathname === '/Login' && <NavBar2 />}
       <Routes>
         <Route path="/" element={<Opening />} />
         <Route path="/Main-Page" element={<MainPage />} />

@@ -5,7 +5,7 @@ import Collection from '@/components/Page/Collection';
 export default function PreviousCollections() {
   return (
     <div className={styles.MainPreviousColl}>
-     <div>
+     <div >
           <Collection season={1} 
           name1="Mateha1" path1="/ProductPage1" 
           name2="Mateha2" price2={40} path2="/ProductPage2"

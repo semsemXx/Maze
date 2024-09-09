@@ -1,0 +1,73 @@
+.bestOf {
+    transform: translateY(-40rem); 
+    width: 100%;
+}
+.bestClo 
+{
+    width: 350px;
+    text-align: center;
+    height: 300px;
+    position: relative;
+}
+.bestClo h1 
+{
+    color: white;
+    font-family: 'maze';
+    font-size: 50px;
+    position: relative;
+    top: 70px;
+}
+.bestClo img 
+{
+    position: relative;
+    bottom: 100px;
+}
+
+.banner {
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    bottom: 5rem;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    left: calc(50% - 150px);
+    top: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    will-change: transform;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateY(0deg) ;
+    }
+    to {
+        transform: perspective(1000px) rotateY(360deg) ;
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
+               translateZ(490px);
+}
+
+.banner .slider .item img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.banner .slider .item img:hover {
+   transform: scale(1.2);
+   transition: 0.3s transform ease;
+}

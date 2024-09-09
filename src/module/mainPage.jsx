@@ -17,7 +17,7 @@ import MoreStar2 from '@/image/little-star-2.png';
 import maze from '@/gif/gifWhiteLogo.gif';
 import { Link } from 'react-router-dom';
 import ImageComponentSoldout from "@/components/Page/itemSoldOut";
-
+import BestClothes from '@/module/BestClothes';
 
 
 export default function MainPage() {
@@ -261,7 +261,7 @@ export default function MainPage() {
           </div>
           <img src={DownStar} className={classes.DownStar} alt="Down Star" />
         </div>
-
+        <BestClothes />
         <motion.div ref={FooterRef}
             variants={{
               hidden: { opacity: 0, y: 75 },

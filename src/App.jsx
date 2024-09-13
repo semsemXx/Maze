@@ -12,6 +12,7 @@ import Checkout from '@/module/checkout';
 import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
 import Confirmation from './module/ReguPage/Confirmation';
+import Philosophy from './module/Philosophy';
 
 export default function App() {
   const location = useLocation();
@@ -22,12 +23,17 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (location.pathname === '/Previous-Collections' || location.pathname === '/Main-Page' ) {
+    if (location.pathname === '/Previous-Collections' || location.pathname === '/Main-Page') {
       document.body.style.overflowX = 'hidden';
+    } else if (location.pathname === '/Our-Philosophy') {
+      document.body.style.overflow = 'hidden';
     } else {
+      document.body.style.overflow = 'auto';
       document.body.style.overflowX = 'auto';
     }
   }, [location.pathname]);
+  
+
 
   return (
     <div>
@@ -68,6 +74,7 @@ export default function App() {
           />}
         />
         <Route path="/Previous-Collections" element={<PreviousCollections />} />
+        <Route path="/Our-Philosophy" element={<Philosophy/>} />
       </Routes>
     </div>
   );

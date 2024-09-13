@@ -14,10 +14,10 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   const controlNavbar = () => {
-    if (window.scrollY > lastScrollY) {
-      setVisible(false); 
-    } else {
-      setVisible(true); 
+    if (window.scrollY > lastScrollY ) {
+      setVisible(false);
+    } else if (lastScrollY > window.scrollY ) {
+      setVisible(true);
     }
     setLastScrollY(window.scrollY);
   };

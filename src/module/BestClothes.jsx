@@ -2,10 +2,23 @@ import React, { useState, useRef } from 'react';
 import Mateha from '@/image/shirt.png';
 import style from '@/css/bestClothes.module.css';
 import Cloud from '@/image/cloud.png';
-import lineNav from '@/image/lineNav.png';
+import Circle from '@/image/no.png';
+import { useNavigate } from 'react-router-dom';
+
+const items = [
+  { imgSrc: Mateha, altText: 'Mateha 1', path: '/path1' },
+  { imgSrc: Mateha, altText: 'Mateha 2', path: '/path2' },
+  { imgSrc: Mateha, altText: 'Mateha 3', path: '/path3' },
+  { imgSrc: Mateha, altText: 'Mateha 3', path: '/path4' },
+  { imgSrc: Mateha, altText: 'Mateha 3', path: '/path5' },
+  { imgSrc: Mateha, altText: 'Mateha 3', path: '/path6' },
+  { imgSrc: Mateha, altText: 'Mateha 3', path: '/path6' },
+
+];
 
 export default function BestClothes() {
   const [hoveredItem, setHoveredItem] = useState(null);
+  const navigate = useNavigate();
   const sliderRef = useRef(null);
 
   const handleMouseEnter = (index) => {
@@ -26,26 +39,30 @@ export default function BestClothes() {
       </div>
       <div className={style.banner}>
         <div className={style.slider} ref={sliderRef}>
-          {[...Array(10)].map((_, index) => (
+          {items.map((item, index) => (
             <div
               key={index}
               className={style.item}
               style={{
                 '--position': index + 1,
-                '--quantity': 10,
+                '--quantity': items.length,
                 '--rotation': hoveredItem === index ? '0deg' : '360deg',
               }}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <img src={Mateha} alt={`Mateha ${index + 1}`} />
+              <img
+                src={item.imgSrc}
+                alt={item.altText}
+                onClick={() => navigate(item.path)}
+              />
             </div>
           ))}
         </div>
-        <div className={style.circleRack}>
-          <img src={lineNav} alt="Circle rack" />
-        </div>
       </div>
+      {/* <div className={style.circleRack}>
+       <img src={Circle} alt="Circle rack" />
+       </div> */}
     </div>
   );
 }

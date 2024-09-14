@@ -40,14 +40,14 @@
     top: 200px;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
+    animation: autoRun 23s linear infinite;
     will-change: transform;
 }
 
 @keyframes autoRun {
-    
+
     from {
-        transform: perspective(1000px) rotateY(0deg) ;
+        transform: perspective(1000px) rotateY(0deg);
     }
     to {
         transform: perspective(1000px) rotateY(360deg) ;
@@ -66,13 +66,29 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
+    transition: transform 0.3s ease;
+  border-radius: 40px;
+  transform: skew(-2deg);
 }
 .banner .slider .item img:hover {
-   transform: scale(1.2);
-   transition: 0.3s transform ease;
+    transform: scale(1.2);
+
 }
-.banner .slider .item{
-    width: 170px;
-    height: 150px;
-   
+.circleRack {
+    position: relative;
+    bottom: 1500px;
+    width: 2000px;
+    transform-origin: center; 
+    animation: circleRack 23s linear infinite;
 }
+  
+  @keyframes circleRack {
+    from {
+      transform: rotateX(260deg) ; 
+    }
+    to {
+      transform: rotateX(260deg); 
+    }
+  }
+  
+  

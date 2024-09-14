@@ -1,21 +1,32 @@
 .navBar {
-    background-color: black;
-    justify-content: center;
-    align-items: center; 
-    height: 112px;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    transition: transform 0.4s ease-in-out;
-    z-index: 50;
-  }
+  background-color: black;
+  justify-content: center;
+  align-items: center; 
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: transform 0.4s , opacity 0.4s ease;
+  z-index: 50;
+}
+
+.navBar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navBar.visible {
+  transform: translateY(0);
+  opacity: 1;
+  box-shadow: 0px 4px 8px rgba(129, 129, 129, 0.4);
+}
 
   .navList {
     display: flex;
     list-style: none;
     justify-content: space-around;
     position: relative;
-    top: 16px;
+    top: 30px;
   }
   
   .navList li {
@@ -131,7 +142,7 @@
   }
   .lineNav {
     position: relative;
-    bottom: 9px;
+    top: 3px;
   }
   .cart 
   {

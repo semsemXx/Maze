@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
+
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -31,7 +33,8 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  phone: { type: String, required: true }
+  phone: { type: String, required: true },
+  type: { type: String, enum: ['admin', 'user'], default: 'user' }
 });
 
 const User = mongoose.model('User', userSchema);
@@ -64,8 +67,6 @@ app.post('/checkout', async (req, res) => {
   }
 });
 
-
-
 app.post('/signup', async (req, res) => {
   const { firstName, lastName, email, password, phone } = req.body;
   try {
@@ -83,8 +84,8 @@ app.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (user && await bcrypt.compare(password, user.password)) {
-      const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: '1h' });
-      res.status(200).json({ message: 'Login successful', token });
+      const token = jwt.sign({ userId: user._id, userType: user.type }, JWT_SECRET, { expiresIn: '1h' });
+      res.status(200).json({ message: 'Login successful', token, userType: user.type });
     } else {
       res.status(400).json({ message: 'Invalid email or password' });
     }
@@ -92,6 +93,8 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Login failed', error });
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

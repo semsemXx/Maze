@@ -45,7 +45,7 @@
 }
 
 @keyframes autoRun {
-    duration:3000s;
+    
     from {
         transform: perspective(1000px) rotateY(0deg) ;
     }

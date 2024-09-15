@@ -81,7 +81,7 @@ export default function Login() {
         if (response.status === 200) {
           const { userType, token } = response.data;
   
-          login({ token, userType }, isCheckboxChecked);
+          login({ token, userType }, isCheckboxChecked); 
   
           setIsLoginSuccessful(true);
   
@@ -89,7 +89,7 @@ export default function Login() {
             setIsLoginSuccessful(false);
   
             if (userType === 'admin') {
-              navigate('/admindash');
+              navigate('/admindash');  
             } else if (userType === 'user') {
               navigate('/Main-Page');
             } else {
@@ -105,6 +105,7 @@ export default function Login() {
       }
     }
   };
+  
   
   const handleForgotPassword = () => {
     navigate('/resetpass');

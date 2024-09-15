@@ -47,6 +47,7 @@ export default function App() {
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/resetpass" element={<Resetpass />} />
         <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/admindash" element={<admindash />} />
         <Route
           path="/ProductPage1"
           element={<SoldOutProductPage 

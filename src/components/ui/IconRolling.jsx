@@ -8,34 +8,29 @@ export default function IconRolling({ scrollToNewColl }) {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-
       const eye = document.querySelector(`.${classes.eye}`);
       const eyeHole = document.querySelector(`.${classes.eyeHole}`);
 
-      if (eye && eyeHole) {
-        const rekt = eye.getBoundingClientRect();
-        const eyeX = rekt.left + rekt.width / 2;
-        const eyeY = rekt.top + rekt.height / 2;
-
-        let angleDeg = angle(mouseX, mouseY, eyeX, eyeY);
-
-        const minRotation = 30;  
-        const maxRotation = 115;
-
-        angleDeg = Math.max(minRotation, Math.min(maxRotation, angleDeg));
-
-        eyeHole.style.transform = `rotate(${90 + angleDeg}deg)`;
+      if (!eye || !eyeHole) {
+        return;
       }
-    };
 
-    const angle = (cx, cy, ex, ey) => {
-      const dy = ey - cy;
-      const dx = ex - cx;
-      const rad = Math.atan2(dy, dx);
-      const deg = rad * 180 / Math.PI;
-      return deg;
+      const eyeRect = eye.getBoundingClientRect();
+      const mouseX = e.clientX - eyeRect.left;
+      const mouseY = e.clientY - eyeRect.top;
+
+      const normalizedX = (mouseX / eyeRect.width) * 2 - 1;
+      const normalizedY = (mouseY / eyeRect.height) * 2 - 1;
+
+      const minX = -0.9;
+      const maxX = 1.5;
+      const minY = -0.4;
+      const maxY = 0.2;
+
+      let offsetX = Math.max(minX, Math.min(maxX, normalizedX));
+      let offsetY = Math.max(minY, Math.min(maxY, normalizedY));
+
+      eyeHole.style.transform = `translate(${offsetX * 10}px, ${offsetY * 10}px)`;
     };
 
     document.addEventListener('mousemove', handleMouseMove);
@@ -46,7 +41,7 @@ export default function IconRolling({ scrollToNewColl }) {
   }, [classes.eye, classes.eyeHole]);
 
   return (
-    <div className={`${classes.IconUi} ${rotate ? classes.rotate : ''}`}>
+    <div className={`${classes.IconUi} ${rotate ? classes.classes.rotate : ''}`}>
       <button onClick={scrollToNewColl} className={classes.PreUiIcon}>
         <img src={IconImage} className={classes.eye} alt="IconImage" />
         <img src={EyeHole} className={classes.eyeHole} alt="EyeHole" />

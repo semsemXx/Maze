@@ -298,10 +298,10 @@
       .PreUiIcon .eyeHole
       {
         position: relative;
-        top: 20px;
+        bottom: 5px;
         width: 100px;
         height: auto;
-
+       
       }
       .IconUi.rotate {
         transform: rotate(360deg);

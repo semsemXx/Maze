@@ -2,7 +2,9 @@ import React, { useState, useContext } from 'react';
 import classes from '@/css/login.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { UserContext } from '@/context/UserContext'; 
+import { UserContext } from '@/context/UserContext';
+
+
 
 export default function Login() {
   const { login } = useContext(UserContext);
@@ -41,12 +43,13 @@ export default function Login() {
 
     if (Object.keys(messages).length === 0) {
       try {
-        const response = await axios.post('http://localhost:5000/signup', { 
+        const response = await axios.post('http://localhost:5000/signup', {
           firstName: signupFirstName,
           lastName: signupLastName,
           email: signupEmail,
           password: signupPassword,
-          phone: signupPhone
+          phone: signupPhone,
+          type: 'user'
         });
 
         if (response.status === 201) {
@@ -55,50 +58,55 @@ export default function Login() {
             setIsAccountCreated(false);
             toggleActive();
           }, 2500);
-        } else {
-          alert('Failed to create account. Please try again.');
         }
       } catch (error) {
-        console.error('Error creating account:', error);
         alert('An error occurred while creating the account. Please try again.');
       }
     }
   };
-
   const handleLogin = async () => {
     const messages = {};
     if (!loginEmail || !/\S+@\S+\.\S+/.test(loginEmail)) messages.loginEmail = 'Valid email is required';
     if (!loginPassword) messages.loginPassword = 'Password is required';
-
+  
     setValidationMessages(messages);
-
+  
     if (Object.keys(messages).length === 0) {
       try {
-        const response = await axios.post('http://localhost:5000/login', {  
+        const response = await axios.post('http://localhost:5000/login', {
           email: loginEmail,
           password: loginPassword,
         });
-
+  
         if (response.status === 200) {
-          const userData = response.data; 
-
-          login(userData, isCheckboxChecked);
-
+          const { userType, token } = response.data;
+  
+          login({ token, userType }, isCheckboxChecked); 
+  
           setIsLoginSuccessful(true);
+  
           setTimeout(() => {
             setIsLoginSuccessful(false);
-            navigate('/Main-Page');
+  
+            if (userType === 'admin') {
+              navigate('/admindash');  
+            } else if (userType === 'user') {
+              navigate('/Main-Page');
+            } else {
+              console.error('Unknown user type');
+            }
           }, 2000);
         } else {
           alert('Login failed. Please check your credentials.');
         }
       } catch (error) {
-        console.error('Error logging in:', error);
-        alert('There is no account with this info. Please try again.');
+        console.error('Login error:', error);
+        alert('An error occurred during login. Please try again.');
       }
     }
   };
-
+  
+  
   const handleForgotPassword = () => {
     navigate('/resetpass');
   };
@@ -107,16 +115,10 @@ export default function Login() {
     <div className={classes.Login}>
       <div className={classes.topBar}>Free shipping for your first order!</div>
       <div className={`${classes.LoginDiv} ${isAccountCreated || isLoginSuccessful ? classes.blur : ''}`}>
-        <button
-          className={`${classes.signupbut} ${isSignupActive ? classes.active : ''}`}
-          onClick={toggleActive}
-        >
+        <button className={`${classes.signupbut} ${isSignupActive ? classes.active : ''}`} onClick={toggleActive}>
           Signup
         </button>
-        <button
-          className={`${classes.loginbut} ${!isSignupActive ? classes.active : ''}`}
-          onClick={toggleActive}
-        >
+        <button className={`${classes.loginbut} ${!isSignupActive ? classes.active : ''}`} onClick={toggleActive}>
           Login
         </button>
 
@@ -125,14 +127,14 @@ export default function Login() {
             <input
               className={`${classes.mail} ${validationMessages.loginEmail ? classes.errorInput : ''}`}
               type="text"
-              placeholder={validationMessages.loginEmail || "Mail or phone number"}
+              placeholder={validationMessages.loginEmail || 'Mail or phone number'}
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
             />
             <input
               className={`${classes.pass} ${validationMessages.loginPassword ? classes.errorInput : ''}`}
               type="password"
-              placeholder={validationMessages.loginPassword || "Password"}
+              placeholder={validationMessages.loginPassword || 'Password'}
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             />
@@ -159,35 +161,35 @@ export default function Login() {
             <input
               className={`${classes.firstname} ${validationMessages.firstName ? classes.errorInput : ''}`}
               type="text"
-              placeholder={validationMessages.firstName || "First name"}
+              placeholder={validationMessages.firstName || 'First name'}
               value={signupFirstName}
               onChange={(e) => setSignupFirstName(e.target.value)}
             />
             <input
               className={`${classes.lastname} ${validationMessages.lastName ? classes.errorInput : ''}`}
               type="text"
-              placeholder={validationMessages.lastName || "Last name"}
+              placeholder={validationMessages.lastName || 'Last name'}
               value={signupLastName}
               onChange={(e) => setSignupLastName(e.target.value)}
             />
             <input
               className={`${classes.email} ${validationMessages.email ? classes.errorInput : ''}`}
               type="email"
-              placeholder={validationMessages.email || "Mail"}
+              placeholder={validationMessages.email || 'Mail'}
               value={signupEmail}
               onChange={(e) => setSignupEmail(e.target.value)}
             />
             <input
               className={`${classes.password} ${validationMessages.password ? classes.errorInput : ''}`}
               type="password"
-              placeholder={validationMessages.password || "Password"}
+              placeholder={validationMessages.password || 'Password'}
               value={signupPassword}
               onChange={(e) => setSignupPassword(e.target.value)}
             />
             <input
               className={`${classes.phone} ${validationMessages.phone ? classes.errorInput : ''}`}
               type="text"
-              placeholder={validationMessages.phone || "Phone"}
+              placeholder={validationMessages.phone || 'Phone'}
               value={signupPhone}
               onChange={(e) => setSignupPhone(e.target.value)}
             />

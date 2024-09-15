@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import Mateha from '@/image/shirt.png';
+import Mateha from '@/image/shirt2.png';
 import style from '@/css/bestClothes.module.css';
 import Cloud from '@/image/cloud.png';
 import Circle from '@/image/no.png';

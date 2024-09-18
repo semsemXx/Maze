@@ -13,6 +13,7 @@ import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
 import Confirmation from './module/ReguPage/Confirmation';
 import Philosophy from './module/Philosophy';
+import Policy from './module/ReguPage/Policy';
 
 export default function App() {
   const location = useLocation();
@@ -76,6 +77,7 @@ export default function App() {
         />
         <Route path="/Previous-Collections" element={<PreviousCollections />} />
         <Route path="/Our-Philosophy" element={<Philosophy/>} />
+        <Route path="/Policies" element={<Policy />} />
       </Routes>
     </div>
   );

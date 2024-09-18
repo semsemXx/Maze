@@ -1,0 +1,42 @@
+.Div{
+    height: 729px;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+.welc{
+    font-family: 'Maze';
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 120px;
+    letter-spacing: 5px;    
+}
+.maze{
+    width: 450px;
+    height: 450px;
+    position: relative;
+    top: 120px;
+    left: 525px;
+}
+.maze:hover{
+    transform: scale(1.01);
+}
+.star{
+    position: relative;
+    bottom: 430px;
+}
+.code{
+    background-color: black;
+    width: 381px;
+    height: 40px;
+    border-color: white;
+    border-width: 1px;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: 500px;
+    left: 559px;
+    
+}

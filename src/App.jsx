@@ -13,6 +13,7 @@ import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
 import Confirmation from './module/ReguPage/Confirmation';
 import Philosophy from './module/Philosophy';
+import Admindash from './module/admindash';
 
 export default function App() {
   const location = useLocation();
@@ -47,7 +48,7 @@ export default function App() {
         <Route path="/Checkout" element={<Checkout />} />
         <Route path="/resetpass" element={<Resetpass />} />
         <Route path="/confirmation" element={<Confirmation />} />
-        <Route path="/admindash" element={<admindash />} />
+        <Route path="/admindash" element={<Admindash />} />
         <Route
           path="/ProductPage1"
           element={<SoldOutProductPage 

@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 import ImageComponentSoldout from "@/components/Page/itemSoldOut";
 import BestClothes from '@/module/BestClothes';
 
+
 export default function MainPage() {
   const [loading, setLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);

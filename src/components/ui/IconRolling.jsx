@@ -4,7 +4,6 @@ import classes from '@/css/mainPage.module.css';
 import EyeHole from '@/image/logo-part-2.png';
 
 export default function IconRolling({ scrollToNewColl }) {
-  const [rotate, setRotate] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -41,7 +40,7 @@ export default function IconRolling({ scrollToNewColl }) {
   }, [classes.eye, classes.eyeHole]);
 
   return (
-    <div className={`${classes.IconUi} ${rotate ? classes.classes.rotate : ''}`}>
+    <div className={classes.IconUi}>
       <button onClick={scrollToNewColl} className={classes.PreUiIcon}>
         <img src={IconImage} className={classes.eye} alt="IconImage" />
         <img src={EyeHole} className={classes.eyeHole} alt="EyeHole" />

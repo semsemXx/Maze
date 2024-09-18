@@ -1,0 +1,36 @@
+.policy
+{
+    background-color: black;
+    height: 100vh;
+    width: auto;
+}
+.shipping  , .refund , .payment , .restock
+{
+    transform: translateY(75%) translateX(5%);
+    color: rgb(238, 236, 236);
+    width: 70vw;
+}
+.shipping .ship_Pol , .refund .refund_Pol , .payment .payment_Pol , .restock .restock_Pol
+{
+    font-family: 'maze';    
+    font-weight: 500;
+    font-size: 40px;
+    color: white;
+}
+.shipping .ship_Pol_Cont 
+{
+    margin-bottom: 60px;
+}
+.refund .refund_Pol_Cont 
+{
+    margin-bottom: 40px;
+}
+.payment .payment_Pol_Cont
+{
+    margin-bottom: 40px;
+}
+.shipping .ship_Pol_Cont  , .refund .refund_Pol_Cont  , .payment .payment_Pol_Cont , .restock .restock_Pol_Cont 
+{
+    font-size: 18px;
+}
+

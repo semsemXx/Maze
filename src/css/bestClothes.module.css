@@ -47,16 +47,16 @@
 @keyframes autoRun {
 
     from {
-        transform: perspective(1000px) rotateY(0deg);
+        transform: perspective(1000px) rotateY(0deg) rotateX(-1deg);
     }
     to {
-        transform: perspective(1000px) rotateY(360deg) ;
+        transform: perspective(1000px) rotateY(360deg) rotateX(-1deg) ;
     }
 }
 
 .banner .slider .item {
     position: absolute;
-    width: 300px;
+    width: 200px;
     height: auto;
     transform: rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
                translateZ(490px);

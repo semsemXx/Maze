@@ -1,0 +1,80 @@
+
+.Orders{
+    background-color: black;
+    height: 1500px;
+    color: white;
+    position: relative;
+    top: 50px;
+    font-family: 'Maze';
+}
+.all{
+  font-family: 'Maze';
+  font-size: 30px;
+  position: relative;
+  top: 20px;
+}
+.Orders {
+  padding: 50px;
+}
+
+.ordersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.ordersTable th,
+.ordersTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+
+}
+
+.ordersTable th {
+  background-color: #f4f4f4;
+  color: black;
+  font-size: 20px;
+}
+.searchBar{
+  background-color: black;
+  border-color: white;
+  border-width: 1px;
+  position: relative;
+  width: 200px;
+}
+.sortButton{
+  position: relative;
+  left: 1024px;
+  font-size: 20px;
+}
+.deliveryButton {
+  background-color: #000000;
+  color: white;
+  padding: 6px 12px;
+  cursor: pointer;
+
+}
+
+.deliveryButton:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+.chartButton {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  border-color: white;
+  border-width: 1px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  left: 1325px;
+  height: 35px;
+  width: 95px;
+  bottom: 10px;
+}
+
+.chartButton:hover {
+  background-color: #ffffff; 
+  color: #000000;
+}

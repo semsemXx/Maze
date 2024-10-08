@@ -13,11 +13,10 @@ import Resetpass from "@/module/resetpass";
 import PreviousCollections from './module/previousCollections';
 import Confirmation from './module/ReguPage/Confirmation';
 import Philosophy from './module/Philosophy';
-import CMSPage from './module/cms';
+
 import Admindash from './module/admindash';
-import Orders from './module/ReguPage/Orders';
+
 import Policy from './module/ReguPage/Policy';
-import Charts from "@/module/charts"
 
 
 export default function App() {
@@ -54,9 +53,6 @@ export default function App() {
         <Route path="/resetpass" element={<Resetpass />} />
         <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/admindash" element={<Admindash />} />
-        <Route path="/cms" element={<CMSPage />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/charts" element={<Charts />} />
         <Route
           path="/ProductPage1"
           element={<SoldOutProductPage 
